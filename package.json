@@ -1,0 +1,19 @@
+{
+  "name": "system",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces":[
+    "packages/**"
+  ],
+  "main": "index.js",
+  "repository": "https://github.com/BiloCode/School-Management-System.git",
+  "author": "BiloCode <billy_paredes_aycho@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "scripts" : {
+    "start" : "lerna exec --scope @system/client -- yarn start",
+    "build" : "lerna exec --scope @system/client -- yarn build"
+  }
+}
