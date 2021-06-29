@@ -20,7 +20,9 @@ module.exports = merge(WebpackCommon, {
     hot: true,
     open: true,
     port : 3000,
-    contentBase : "./build"
+    contentBase : "./build",
+    index : "index.html",
+    historyApiFallback: true,
   },
   plugins : [
     new HotModuleReplacementPlugin(),
