@@ -31,6 +31,8 @@
       "error",
       "always",
       {
+        "tsx": "never",
+        "jsx": "never",
         "ts": "never",
         "js": "never"
       }

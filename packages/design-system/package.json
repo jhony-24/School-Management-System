@@ -18,7 +18,7 @@
     "build": "webpack",
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "eslint --ext .ts,.ts src",
+    "lint": "eslint .",
     "lint:fix": "eslint src/** --fix"
   },
   "bugs": {
