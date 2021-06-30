@@ -4,49 +4,48 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry : path.resolve(__dirname, "./src/index.ts"),
-  output : {
+  entry: path.resolve(__dirname, "./src/index.ts"),
+  output: {
     clean: true,
-    filename : "bundle.js",
-    path : path.resolve(__dirname, "./build"),
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "./build"),
   },
-  mode : "production",
-  module : {
-    rules : [
+  mode: "production",
+  module: {
+    rules: [
       {
         test: /.css$/,
-        use : [MiniCssExtractPlugin.loader, "css-loader"]
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test : /.(tsx|ts)$/,
-        loader : "ts-loader",
-        exclude : /node_modules/
+        test: /.(tsx|ts)$/,
+        loader: "ts-loader",
+        exclude: /node_modules/,
       },
       {
-        type : "asset/resource",
-        test : /.(png|svg|jpg|jpeg|json|gif|txt)&/
-      }
-    ]
+        type: "asset/resource",
+        test: /.(png|svg|jpg|jpeg|json|gif|txt)&/,
+      },
+    ],
   },
-  plugins : [
-    new MiniCssExtractPlugin(),
-    new CleanWebpackPlugin(),
-  ],
-  resolve : {
-    extensions : [".js", ".tsx", ".ts"],
+  plugins: [new MiniCssExtractPlugin(), new CleanWebpackPlugin()],
+  resolve: {
+    extensions: [".js", ".tsx", ".ts"],
   },
-  optimization : {
+  optimization: {
     minimize: true,
-    splitChunks : {
-      chunks : "all"
+    splitChunks: {
+      chunks: "all",
     },
-    minimizer : [
-      '...',
-      new CssMinimizerPlugin()
-    ]
+    minimizer: ["...", new CssMinimizerPlugin()],
   },
-  externals : {
+  externals: {
     react: "react",
-    reactDom : "react-dom"
+    reactDom: "react-dom",
+    "styled-components": {
+      commonjs: "styled-components",
+      commonjs2: "styled-components",
+      amd: "styled-components",
+    },
   },
 };

@@ -4,14 +4,24 @@
   "private": true,
   "main": "src/index.tsx",
   "license": "MIT",
-  
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test" : "jest",
-    "test:watch" : "jest --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint src",
     "lint:fix": "eslint src/** --fix"
+  },
+  "dependencies": {
+    "@types/styled-components": "^5.1.10",
+    "clsx": "^1.1.1",
+    "core-js": "^3.15.1",
+    "jotai": "^1.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "styled-components": "^5.3.0",
+    "zustand": "^3.5.5"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -33,12 +43,8 @@
     "webpack": "^5.41.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2",
-    "webpack-merge": "^5.8.0"
-  },
-  "dependencies": {
-    "core-js": "^3.15.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "webpack-merge": "^5.8.0",
+    "@testing-library/react": "^12.0.0"
   },
   "browsersList": "> 0.25%, not dead"
 }
