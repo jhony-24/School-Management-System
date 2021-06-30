@@ -27,7 +27,9 @@
     "start": "lerna exec --scope @system/client -- yarn start",
     "build": "lerna exec --scope @system/client -- yarn build",
     "build:design-system": "lerna exec --scope @system/client -- yarn build",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "lint": "eslint packages/**",
+    "lint:fix": "eslint packages/** --fix"
   },
   "dependencies": {
     "@commitlint/cli": "^12.1.4",

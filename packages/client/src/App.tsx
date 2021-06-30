@@ -1,7 +1,9 @@
+import { Button } from '@system/design-system';
+
 const App = () => (
   <div>
     <h1>React App content</h1>
-    <button type="button">Hello team senati</button>
+    <Button />
   </div>
 );
 
