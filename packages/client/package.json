@@ -5,8 +5,9 @@
   "main": "src/index.tsx",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build:design-system": "lerna exec --scope @system/design-system -- yarn build",
+    "dev": "yarn build:design-system && webpack serve --config webpack.dev.js",
+    "build": "yarn build:design-system && webpack --config webpack.prod.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint src",
