@@ -12,3 +12,4 @@ docs
 **/yarn-error.log
 **/*.json
 **/public/*
+*config.*
