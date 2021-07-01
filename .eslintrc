@@ -27,23 +27,17 @@
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ],
-    "import/extensions": [
-      "error",
-      "always",
-      {
-        "tsx": "never",
-        "jsx": "never",
-        "ts": "never",
-        "js": "never"
-      }
-    ],
+    "import/extensions": "off",
     "max-len": "off",
     "import/prefer-default-export": "off",
     "react/require-default-props": "off",
     "no-alert": "off",
     "no-console": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "no-use-before-define" : "off"
+    "no-use-before-define": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/no-unresolved": "off"
   },
   "settings": {
     "import/resolver": {
