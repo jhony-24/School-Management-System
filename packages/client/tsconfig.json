@@ -11,7 +11,19 @@
      "noImplicitAny": true,                       /* Raise error on expressions and declarations with an implied 'any' type. */
      "strictNullChecks": true,                    /* Enable strict null checks. */
     "moduleResolution": "node",                  /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
-    "baseUrl": "./src",                             /* Base directory to resolve non-absolute module names. */
+    "baseUrl": "./src",  
+    "paths": {
+      "@app/*": [ "app/*" ],
+      "@config/*": [ "config/*" ],
+      "@stores/*": [ "stores/*" ],
+      "@hooks/*": [ "hooks/*" ],
+      "@assets/*": [ "assets/*" ],
+      "@atoms/*": [ "components/atoms/*" ],
+      "@molecules/*": [ "components/molecules/*" ],
+      "@organisms/*": [ "components/organisms/*" ],
+      "@pages/*": [ "components/pages/*" ],
+      "@__mocks__/*": [ "__mocks__/*" ]
+    },
     "esModuleInterop": true,  
     "skipLibCheck": true,                           /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true        /* Disallow inconsistently-cased references to the same file. */

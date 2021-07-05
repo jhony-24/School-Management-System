@@ -27,6 +27,18 @@ module.exports = {
   ],
   resolve : {
     extensions : [".js", ".jsx", ".tsx", ".ts"],
-    preferRelative : true
+    preferRelative : true,
+    alias: {
+      "@app" : path.resolve(__dirname, "./src/app"),
+      "@config" : path.resolve(__dirname, "./src/config"),
+      "@stores" : path.resolve(__dirname, "./src/stores"),
+      "@hooks" : path.resolve(__dirname, "./src/hooks"),
+      "@assets" : path.resolve(__dirname, "./src/assets"),
+      "@atoms" : path.resolve(__dirname, "./src/components/atoms"),
+      "@molecules" : path.resolve(__dirname, "./src/components/molecules"),
+      "@organisms" : path.resolve(__dirname, "./src/components/organisms"),
+      "@pages" : path.resolve(__dirname, "./src/components/pages"),
+      "@__mocks__" : path.resolve(__dirname, "./src/__mocks__"),
+    }
   }
 }
