@@ -2,7 +2,15 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@/*" : ["*"]
+      "@__mocks__/*" : ["__mocks__/*"],
+      "@controllers/*" : ["api/controllers/*"],
+      "@middlewares/*" : ["api/middlewares/*"],
+      "@routes/*" : ["api/routes/*"],
+      "@interfaces/*" : ["interfaces/*"],
+      "@services/*" : ["services/*"],
+      "@types/*" : ["types/*"],
+      "@config/*" : ["config/*"],
+      "@api" : ["api/index.ts"]
     },
     "target": "es6",
     "module": "CommonJS",

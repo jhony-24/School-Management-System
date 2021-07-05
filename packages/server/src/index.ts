@@ -1,3 +1,4 @@
 import 'module-alias/register';
+import userController from './api/controllers/userController';
 
-console.log('run');
+userController();
