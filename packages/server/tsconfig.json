@@ -10,7 +10,8 @@
       "@services/*" : ["services/*"],
       "@types/*" : ["types/*"],
       "@config/*" : ["config/*"],
-      "@api" : ["api/index.ts"]
+      "@api" : ["api/index.ts"],
+      "@utils/*" : ["utils/*"]
     },
     "target": "es6",
     "module": "CommonJS",
