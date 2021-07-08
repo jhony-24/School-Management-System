@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/BiloCode/School-Management-System/issues"
   },
-  "homepage": "https://github.com/BiloCode/School-Management-System#readme"
+  "homepage": "https://github.com/BiloCode/School-Management-System#readme",
+  "dependencies": {
+    "firebase": "^8.7.1"
+  }
 }
