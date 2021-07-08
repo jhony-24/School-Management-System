@@ -14,15 +14,16 @@
   "keywords": [],
   "license": "MIT",
   "_moduleAliases": {
-    "@__mocks__": "src/__mocks__",
-    "@services": "src/services",
+    "@mocks": "src/__mocks__",
     "@controllers": "src/api/controllers",
     "@middlewares": "src/api/middlewares",
     "@routers": "src/api/routes",
-    "@interfaces": "src/interfaces",
-    "@types": "src/types",
+    "@models": "src/app/models",
+    "@services": "src/app/services",
+    "@interfaces": "src/app/interfaces",
+    "@types": "src/app/types",
+    "@utils": "src/app/utils",
     "@config": "src/config",
-    "@utils": "src/utils",
     "@api": "src/api/index.ts"
   },
   "devDependencies": {
