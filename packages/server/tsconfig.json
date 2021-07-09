@@ -2,16 +2,17 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@__mocks__/*" : ["__mocks__/*"],
+      "@mocks/*" : ["__mocks__/*"],
       "@controllers/*" : ["api/controllers/*"],
       "@middlewares/*" : ["api/middlewares/*"],
       "@routes/*" : ["api/routes/*"],
-      "@interfaces/*" : ["interfaces/*"],
-      "@services/*" : ["services/*"],
-      "@types/*" : ["types/*"],
       "@config/*" : ["config/*"],
       "@api" : ["api/index.ts"],
-      "@utils/*" : ["utils/*"]
+      "@types/*" : ["app/types/*"],
+      "@interfaces/*" : ["app/interfaces/*"],
+      "@services/*" : ["app/services/*"],
+      "@utils/*" : ["app/utils/*"],
+      "@models/*" : ["app/models/*"]
     },
     "target": "es6",
     "module": "CommonJS",
@@ -27,7 +28,9 @@
     "skipLibCheck": true,  
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "traceResolution": true
+    "traceResolution": true,
+    "resolveJsonModule" : true,
+    "strictPropertyInitialization" : false
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules"]

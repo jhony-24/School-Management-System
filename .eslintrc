@@ -41,7 +41,8 @@
     "import/no-unresolved": "off",
     "class-methods-use-this": "off",
     "linebreak-style": "off",
-    "no-useless-constructor": "off"
+    "no-useless-constructor": "off",
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
   },
   "settings": {
     "import/resolver": {
