@@ -29,7 +29,8 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "traceResolution": true,
-    "resolveJsonModule" : true
+    "resolveJsonModule" : true,
+    "strictPropertyInitialization" : false
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules"]
