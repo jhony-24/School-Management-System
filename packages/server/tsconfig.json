@@ -28,7 +28,8 @@
     "skipLibCheck": true,  
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "traceResolution": true
+    "traceResolution": true,
+    "resolveJsonModule" : true
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules"]
