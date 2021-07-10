@@ -2,9 +2,12 @@
   "name": "system",
   "version": "independent",
   "private": true,
-  "workspaces": [
-    "packages/**"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/**"
+    ],
+    "nohoist": ["**"]
+  },
   "main": "index.js",
   "repository": "https://github.com/BiloCode/School-Management-System.git",
   "author": "BiloCode <billy_paredes_aycho@hotmail.com>",
