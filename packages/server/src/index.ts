@@ -2,6 +2,7 @@ import 'module-alias/register';
 import 'reflect-metadata';
 
 import dotenv from 'dotenv';
+
 import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
@@ -11,8 +12,10 @@ import apiConfig from '@api';
 import Logger from '@utils/Logger';
 import typeORM from '@config/typeORM';
 import firebaseAdmin from '@config/firebase';
+import { loadEnvironments } from '@config/environments';
 
 dotenv.config();
+loadEnvironments();
 
 export async function server() {
   const app = express();
