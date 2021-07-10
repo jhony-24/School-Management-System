@@ -1,23 +1,23 @@
 ### Setup local development
 
+Create mysql environments.
+Before to put these you need create a name for your database
 
-Create mysql environments
-````
-ENVIRONMENT=DEVELOPMENT 
+```
+ENVIRONMENT=DEVELOPMENT
 MYSQL_USERNAME=
 MYSQL_PASSWORD=
 MYSQL_HOST=
 MYSQL_DATABASE=
 MYSQL_PORT=
 
-````
-To use firebase you need create a **firebaseSecretKey.json** file
+```
+
+To use firebase you need to create a **firebaseSecretKey.json** file
 
 ```
 /src
-  /config
-    firebase.ts
-    firebaseSecretKey.json
+  firebaseSecretKey.json
 ```
 
 [https://console.firebase.google.com/u/0/](https://console.firebase.google.com/u/0/)
