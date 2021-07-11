@@ -4,6 +4,7 @@ export let MYSQL_HOST = process.env.MYSQL_HOST as string;
 export let MYSQL_DATABASE = process.env.MYSQL_DATABASE as string;
 export let MYSQL_PORT = Number(process.env.MYSQL_PORT) as number;
 export let ENVIRONMENT = process.env.ENVIRONMENT as string;
+export let TOKEN_KEY = process.env.TOKEN_KEY as string;
 
 export function loadEnvironments() {
   MYSQL_USERNAME = process.env.MYSQL_USERNAME as string;
@@ -12,4 +13,5 @@ export function loadEnvironments() {
   MYSQL_DATABASE = process.env.MYSQL_DATABASE as string;
   MYSQL_PORT = Number(process.env.MYSQL_PORT) as number;
   ENVIRONMENT = process.env.ENVIRONMENT as string;
+  TOKEN_KEY = process.env.TOKEN_KEY as string;
 }
