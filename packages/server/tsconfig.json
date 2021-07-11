@@ -30,7 +30,8 @@
     "experimentalDecorators": true,
     "traceResolution": true,
     "resolveJsonModule" : true,
-    "strictPropertyInitialization" : false
+    "strictPropertyInitialization" : false,
+    "noImplicitAny": false
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules"]
