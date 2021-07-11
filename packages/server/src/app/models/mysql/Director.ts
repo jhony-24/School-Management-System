@@ -1,19 +1,18 @@
 import {
   Column,
-  Generated,
+  Entity,
   JoinColumn,
   OneToOne,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 
-import User from './User';
+import { User } from './User';
 
-class Director {
-  @PrimaryColumn()
-  @Generated('uuid')
+@Entity()
+export class Director {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @PrimaryColumn()
   @OneToOne(() => User)
   @JoinColumn()
   user: User;
@@ -21,8 +20,6 @@ class Director {
   @Column({ type: 'char', length: 9 })
   phone: string;
 
-  @Column({ type: 'varchar', nullable: true })
+  @Column({ type: 'varchar' })
   email: string;
 }
-
-export default Director;

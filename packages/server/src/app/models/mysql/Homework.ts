@@ -1,28 +1,33 @@
-import { Column, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
+import { Student } from './Student';
 import { FirebaseFileType } from '@system/types';
 
-import Student from './Student';
-
-class Homework {
+@Entity()
+export class Homework {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column('varchar')
+  @OneToOne(() => Student)
+  @JoinColumn()
+  student: Student;
+
+  @Column({ type: 'varchar' })
   publicationId: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar' })
   comment: string;
 
   @Column({ type: 'simple-array', default: [] })
   file: FirebaseFileType[];
 
-  @Column({ type: 'date', default: new Date() })
-  createdAt: Date;
-
-  @OneToOne(() => Student)
-  @JoinColumn()
-  student: Student;
+  @CreateDateColumn()
+  createdAt: string;
 }
-
-export default Homework;

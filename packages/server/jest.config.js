@@ -17,5 +17,6 @@ module.exports = {
     "@types/(.*)": "<rootDir>/src/app/types/$1",
     "@config/(.*)": "<rootDir>/src/config/$1",
     "@api": "<rootDir>/src/api/index.ts",
+    "@keys/(.*)" : "<rootDir>/src/keys/&1"
   },
 };

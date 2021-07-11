@@ -24,7 +24,8 @@
     "@types": "src/app/types",
     "@utils": "src/app/utils",
     "@config": "src/config",
-    "@api": "src/api/index.ts"
+    "@api": "src/api/index.ts",
+    "@keys": "src/keys"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",

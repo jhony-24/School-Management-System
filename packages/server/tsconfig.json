@@ -12,7 +12,8 @@
       "@interfaces/*" : ["app/interfaces/*"],
       "@services/*" : ["app/services/*"],
       "@utils/*" : ["app/utils/*"],
-      "@models/*" : ["app/models/*"]
+      "@models/*" : ["app/models/*"],
+      "@keys/*" : ["keys/*"],
     },
     "target": "es6",
     "module": "CommonJS",

@@ -1,17 +1,28 @@
-import { Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
-class Tutor {
+import { Student } from './Student';
+
+@Entity()
+export class Tutor {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({ type: 'char', length: 9 })
   phone: string;
 
-  @Column({ type: 'char', length: 8, nullable: true })
+  @Column({ type: 'char', length: 8 })
   dni: string;
 
-  @Column({ type: 'varchar', nullable: true })
+  @Column({ type: 'varchar' })
   fullName: string;
-}
 
-export default Tutor;
+  @ManyToMany(() => Student, { cascade: true })
+  @JoinTable()
+  student: Student[];
+}

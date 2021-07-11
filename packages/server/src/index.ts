@@ -1,39 +1,14 @@
-import 'module-alias/register';
-import 'reflect-metadata';
+import express from 'express';
 
-import dotenv from 'dotenv';
+import { server } from './server';
 
-import cors from 'cors';
-import helmet from 'helmet';
-import compression from 'compression';
-import express, { json, urlencoded } from 'express';
-
-import apiConfig from '@api';
-import Logger from '@utils/Logger';
-import typeORM from '@config/typeORM';
-import firebaseAdmin from '@config/firebase';
-import { loadEnvironments } from '@config/environments';
-
-dotenv.config();
-loadEnvironments();
-
-export async function server() {
+(async () => {
   const app = express();
-  const serverPort = process.env.PORT || 7000;
+  const port = process.env.PORT || 7000;
 
-  await typeORM();
-  await firebaseAdmin();
+  await server(app);
 
-  app.use(json());
-  app.use(urlencoded({ extended: true }));
-  app.use(cors());
-  app.use(helmet());
-  app.use(compression());
-  app.use(apiConfig());
-
-  app.listen(serverPort, () => {
-    Logger.info(serverPort as string);
+  app.listen(port, () => {
+    console.log('Server running in port : ' + port);
   });
-}
-
-server();
+})();

@@ -1,21 +1,20 @@
 import {
   Column,
-  Generated,
+  Entity,
   JoinColumn,
   OneToOne,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 
 import { PersonStateType } from '@system/types';
 
-import User from './User';
+import { User } from './User';
 
-class Teacher {
-  @PrimaryColumn()
-  @Generated('uuid')
+@Entity()
+export class Teacher {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @PrimaryColumn()
   @OneToOne(() => User)
   @JoinColumn()
   user: User;
@@ -39,5 +38,3 @@ class Teacher {
   @Column({ type: 'char', length: 9 })
   phone: string;
 }
-
-export default Teacher;
