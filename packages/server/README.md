@@ -21,3 +21,9 @@ To use firebase you need to create a **firebaseSecretKey.json** file
 ```
 
 [https://console.firebase.google.com/u/0/](https://console.firebase.google.com/u/0/)
+
+### Code Rules
+
+- Camel Case -> Class
+- Lower Case -> Functions
+- Snake Case -> variables
