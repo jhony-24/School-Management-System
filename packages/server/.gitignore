@@ -8,4 +8,4 @@ package-lock.json
 coverage
 *.env
 
-firebaseSecretKey.json
+firestore_secret_key.json

@@ -13,11 +13,12 @@ MYSQL_PORT=
 
 ```
 
-To use firebase you need to create a **firebaseSecretKey.json** file
+To use firebase you need to create a **firestore_secret_key.json** file
 
 ```
 /src
-  firebaseSecretKey.json
+  /keys
+    firestore_secret_key.json
 ```
 
 [https://console.firebase.google.com/u/0/](https://console.firebase.google.com/u/0/)
@@ -26,4 +27,4 @@ To use firebase you need to create a **firebaseSecretKey.json** file
 
 - Camel Case -> Class
 - Lower Case -> Functions
-- Snake Case -> variables
+- Snake Case -> Variables

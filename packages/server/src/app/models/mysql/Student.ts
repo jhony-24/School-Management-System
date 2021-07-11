@@ -1,22 +1,20 @@
 import {
   Column,
-  Generated,
+  Entity,
   JoinColumn,
   OneToOne,
-  PrimaryColumn,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-import User from './User';
+import { User } from './User';
 
 import { PersonStateType } from '@system/types';
 
-class Student {
-  @PrimaryColumn()
-  @Generated('uuid')
+@Entity()
+export class Student {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @PrimaryColumn()
   @OneToOne(() => User)
   @JoinColumn()
   user: User;
@@ -28,5 +26,3 @@ class Student {
   })
   state: PersonStateType;
 }
-
-export default Student;

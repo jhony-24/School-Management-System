@@ -1,12 +1,13 @@
 import * as fireorm from 'fireorm';
-import admin from 'firebase-admin';
-import Logger from '@utils/Logger';
-import firebaseSecretKey from '../firebaseSecretKey.json';
+import * as admin from 'firebase-admin';
 
-const serviceAccount = firebaseSecretKey as admin.ServiceAccount;
+import Logger from '@utils/Logger';
+import FirestoreSecretKey from '@keys/firestore_secret_key.json';
 
 const firebaseInitialize = async () => {
   if (admin.apps.length) return;
+
+  const serviceAccount = FirestoreSecretKey as admin.ServiceAccount;
 
   try {
     admin.initializeApp({
