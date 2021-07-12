@@ -25,7 +25,7 @@ export class Homework {
   @Column({ type: 'varchar' })
   comment: string;
 
-  @Column({ type: 'simple-array', default: [] })
+  @Column({ type: 'simple-array', default: '[]' })
   file: FirebaseFileType[];
 
   @CreateDateColumn()
