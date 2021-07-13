@@ -1,8 +1,8 @@
 import { Collection } from 'fireorm';
-import { DateRangeType, SchoolGradeType } from '@system/types';
+import { DateRangeType, SchoolGradeType, IClassroom } from '@system/types';
 
 @Collection()
-class Classroom {
+class Classroom implements IClassroom {
   id: string;
   name: string;
   teacherId: string;

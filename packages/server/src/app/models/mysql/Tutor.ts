@@ -6,11 +6,10 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { DetailStudent } from './DetailStudent';
-
-import { Student } from './Student';
+import { ITutor } from '@system/types';
 
 @Entity()
-export class Tutor {
+export class Tutor implements ITutor {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

@@ -1,10 +1,10 @@
 import { Collection } from 'fireorm';
-import { FilePermissionType } from '@system/types';
+import { FilePermissionType, IFileSection } from '@system/types';
 
 //Figma Refactor
 
 @Collection()
-class FileSection {
+class FileSection implements IFileSection {
   id: string;
   name: string;
   permissions: {

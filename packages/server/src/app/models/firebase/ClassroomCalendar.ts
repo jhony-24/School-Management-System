@@ -1,9 +1,9 @@
 import { firestore } from 'firebase-admin';
 import { Collection } from 'fireorm';
-import { DateRangeType } from '../../../../../types';
+import { DateRangeType, IClassroomCalendar } from '@system/types';
 
 @Collection()
-class School {
+class ClassroomCalendar implements IClassroomCalendar {
   id: string;
   classroomId: string;
   year: firestore.Timestamp;
@@ -21,4 +21,4 @@ class School {
   }[];
 }
 
-export default School;
+export default ClassroomCalendar;

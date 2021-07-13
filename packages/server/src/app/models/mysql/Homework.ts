@@ -7,10 +7,10 @@ import {
 } from 'typeorm';
 
 import { Student } from './Student';
-import { FirebaseFileType } from '@system/types';
+import { FirebaseFileType, IHomework } from '@system/types';
 
 @Entity()
-export class Homework {
+export class Homework implements IHomework {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

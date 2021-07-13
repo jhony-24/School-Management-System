@@ -1,8 +1,8 @@
 import { Collection } from 'fireorm';
-import { FirebaseImage } from '@system/types';
+import { FirebaseImage, ISchool } from '@system/types';
 
 @Collection()
-class School {
+class School implements ISchool {
   id: string;
   name: string;
   directorId: string;

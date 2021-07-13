@@ -5,7 +5,6 @@ import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
 import { json, urlencoded, Express } from 'express';
-
 import routerInitialize from '@api';
 import mysqlConnection from '@config/mysql';
 import firebaseConnection from '@config/firebase';

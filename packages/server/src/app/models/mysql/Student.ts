@@ -11,13 +11,13 @@ import {
 
 import { User } from './User';
 
-import { PersonStateType } from '@system/types';
+import { IStudent, PersonStateType } from '@system/types';
 import { Homework } from './Homework';
 import { DetailStudent } from './DetailStudent';
 import { Teacher } from './Teacher';
 
 @Entity()
-export class Student {
+export class Student implements IStudent {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

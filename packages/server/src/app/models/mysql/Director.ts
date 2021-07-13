@@ -5,11 +5,12 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { IDirector } from '@system/types';
 
 import { User } from './User';
 
 @Entity()
-export class Director {
+export class Director implements IDirector {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

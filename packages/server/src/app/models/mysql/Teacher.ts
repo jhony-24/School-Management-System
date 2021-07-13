@@ -6,12 +6,12 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-import { PersonStateType } from '@system/types';
+import { ITeacher, PersonStateType } from '@system/types';
 
 import { User } from './User';
 
 @Entity()
-export class Teacher {
+export class Teacher implements ITeacher {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
