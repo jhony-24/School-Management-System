@@ -6,6 +6,8 @@ import FirebaseImage from './src/FirebaseImage';
 import PersonStateType from './src/PersonStateType';
 import PublicationType from './src/PublicationType';
 import SchoolGradeType from './src/SchoolGradeType';
+export * from './src/models/mysql';
+export * from './src/models/firebase';
 
 export {
   DateRangeType,

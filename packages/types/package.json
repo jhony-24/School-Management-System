@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/BiloCode/School-Management-System#readme",
   "dependencies": {
-    "firebase": "^8.7.1"
+    "firebase": "^8.7.1",
+    "firebase-admin": "^9.10.0"
   }
 }
