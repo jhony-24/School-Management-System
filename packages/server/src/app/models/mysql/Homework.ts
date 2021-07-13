@@ -2,8 +2,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  JoinColumn,
-  OneToOne,
+  ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -15,8 +14,7 @@ export class Homework {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @OneToOne(() => Student)
-  @JoinColumn()
+  @ManyToOne(() => Student, (user) => user.homeworks)
   student: Student;
 
   @Column({ type: 'varchar' })

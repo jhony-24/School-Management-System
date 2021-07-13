@@ -5,6 +5,7 @@ import {
   ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { DetailStudent } from './DetailStudent';
 
 import { Student } from './Student';
 
@@ -22,7 +23,7 @@ export class Tutor {
   @Column({ type: 'varchar' })
   fullName: string;
 
-  @ManyToMany(() => Student, { cascade: true })
+  @ManyToMany(() => DetailStudent, { cascade: true })
   @JoinTable()
-  student: Student[];
+  detailStudent: DetailStudent[];
 }

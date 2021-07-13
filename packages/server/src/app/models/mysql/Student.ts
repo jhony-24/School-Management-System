@@ -2,6 +2,9 @@ import {
   Column,
   Entity,
   JoinColumn,
+  JoinTable,
+  ManyToMany,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -9,6 +12,9 @@ import {
 import { User } from './User';
 
 import { PersonStateType } from '@system/types';
+import { Homework } from './Homework';
+import { DetailStudent } from './DetailStudent';
+import { Teacher } from './Teacher';
 
 @Entity()
 export class Student {
@@ -25,4 +31,15 @@ export class Student {
     default: PersonStateType.ACTIVE,
   })
   state: PersonStateType;
+
+  @OneToMany(() => Homework, (homework) => homework.student)
+  homeworks: Homework[];
+
+  @OneToOne(() => DetailStudent, { cascade: true })
+  @JoinColumn()
+  detailStudent: DetailStudent;
+
+  @ManyToMany(() => Teacher, { cascade: true })
+  @JoinTable()
+  teacher: Teacher[];
 }
