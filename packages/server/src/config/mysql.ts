@@ -29,7 +29,7 @@ const mysqlInitialize = async () => {
       host: MYSQL_HOST,
       type: 'mysql',
       synchronize: true,
-      dropSchema: true,
+      // dropSchema: true,
       entities: [
         User,
         Student,
