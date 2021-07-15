@@ -1,12 +1,7 @@
-import {
-  Column,
-  Entity,
-  JoinTable,
-  ManyToMany,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
-import { DetailStudent } from './DetailStudent';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+
 import { ITutor } from '@system/types';
+import { StudentTutors } from './StudentTutors';
 
 @Entity()
 export class Tutor implements ITutor {
@@ -22,7 +17,6 @@ export class Tutor implements ITutor {
   @Column({ type: 'varchar' })
   fullName: string;
 
-  @ManyToMany(() => DetailStudent, { cascade: true })
-  @JoinTable()
-  detailStudent: DetailStudent[];
+  @OneToMany(() => StudentTutors, (studentsTutors) => studentsTutors.student)
+  students: StudentTutors[];
 }

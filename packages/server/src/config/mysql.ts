@@ -6,6 +6,7 @@ import { Director } from '@models/mysql/Director';
 import { Homework } from '@models/mysql/Homework';
 import { Student } from '@models/mysql/Student';
 import { Teacher } from '@models/mysql/Teacher';
+import { StudentTutors } from '@models/mysql/StudentTutors';
 import { ClassroomStudentPerYear } from '@models/mysql/ClassroomStudentPerYear';
 
 import Logger from '@utils/Logger';
@@ -17,7 +18,6 @@ import {
   MYSQL_PORT,
   MYSQL_USERNAME,
 } from './environments';
-import { DetailStudent } from '@models/mysql/DetailStudent';
 
 const mysqlInitialize = async () => {
   try {
@@ -29,13 +29,14 @@ const mysqlInitialize = async () => {
       host: MYSQL_HOST,
       type: 'mysql',
       synchronize: true,
+      dropSchema: true,
       entities: [
         User,
         Student,
         Teacher,
         Tutor,
         Director,
-        DetailStudent,
+        StudentTutors,
         Homework,
         ClassroomStudentPerYear,
       ],
