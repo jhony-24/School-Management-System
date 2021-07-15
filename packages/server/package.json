@@ -21,7 +21,7 @@
     "@models": "src/app/models",
     "@services": "src/app/services",
     "@interfaces": "src/app/interfaces",
-    "@types": "src/app/types",
+    "@localtypes": "src/app/types",
     "@utils": "src/app/utils",
     "@config": "src/config",
     "@api": "src/api/index.ts",
