@@ -6,6 +6,7 @@ import FirebaseImage from './src/FirebaseImage';
 import PersonStateType from './src/PersonStateType';
 import PublicationType from './src/PublicationType';
 import SchoolGradeType from './src/SchoolGradeType';
+import UserType from './src/UserType';
 
 export {
   DateRangeType,
@@ -16,6 +17,7 @@ export {
   PersonStateType,
   PublicationType,
   SchoolGradeType,
+  UserType,
 };
 
 //MYSQL TYPES
