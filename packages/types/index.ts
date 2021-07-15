@@ -6,8 +6,6 @@ import FirebaseImage from './src/FirebaseImage';
 import PersonStateType from './src/PersonStateType';
 import PublicationType from './src/PublicationType';
 import SchoolGradeType from './src/SchoolGradeType';
-export * from './src/models/mysql';
-export * from './src/models/firebase';
 
 export {
   DateRangeType,
@@ -18,4 +16,42 @@ export {
   PersonStateType,
   PublicationType,
   SchoolGradeType,
+};
+
+//MYSQL TYPES
+import IClassroomStudentPerYear from './src/models/mysql/IClassroomStudentPerYear';
+import IStudentTutors from './src/models/mysql/IStudentTutors';
+import IDirector from './src/models/mysql/IDirector';
+import IHomework from './src/models/mysql/IHomework';
+import IStudent from './src/models/mysql/IStudent';
+import ITeacher from './src/models/mysql/ITeacher';
+import ITutor from './src/models/mysql/ITutor';
+import IUser from './src/models/mysql/IUser';
+
+export {
+  IClassroomStudentPerYear,
+  IDirector,
+  IHomework,
+  IStudent,
+  ITeacher,
+  ITutor,
+  IUser,
+  IStudentTutors,
+};
+
+//FIREBASE TYPES
+import IClassroom from './src/models/firebase/IClassroom';
+import IClassroomCalendar from './src/models/firebase/IClassroomCalendar';
+import IFileSection from './src/models/firebase/IFileSection';
+import IPublications from './src/models/firebase/IPublications';
+import ISchool from './src/models/firebase/ISchool';
+import ISystemStorage from './src/models/firebase/ISystemStorage';
+
+export {
+  IClassroom,
+  ISchool,
+  IPublications,
+  IFileSection,
+  IClassroomCalendar,
+  ISystemStorage,
 };
