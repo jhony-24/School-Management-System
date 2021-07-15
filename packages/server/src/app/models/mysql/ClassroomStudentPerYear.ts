@@ -1,19 +1,16 @@
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, ManyToOne } from 'typeorm';
+
 import { IClassroomStudentPerYear } from '@system/types';
+import { Student } from './Student';
 
 @Entity()
 export class ClassroomStudentPerYear implements IClassroomStudentPerYear {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @ManyToOne(() => Student, { primary: true })
+  student: Student;
+
+  @Column({ type: 'varchar', primary: true })
+  classroomId: string;
 
   @Column()
   year: string;
-
-  @CreateDateColumn()
-  createdAt: string;
 }
