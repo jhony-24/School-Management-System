@@ -1,7 +1,9 @@
+import GetClassroomCalendarController from '@controllers/assistance/GetClassroomCalendarController';
+import { AdapterController } from '@utils/AdapterController';
 import { Router } from 'express';
 
 const app = Router();
 
-app.get('/', () => console.log('Hello World'));
+app.get('/', AdapterController(GetClassroomCalendarController));
 
 export default app;
