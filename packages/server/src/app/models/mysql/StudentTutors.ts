@@ -1,9 +1,9 @@
-import { Entity, ManyToOne } from 'typeorm';
+import { Entity, ManyToOne, Column } from 'typeorm';
 
 import { Student } from './Student';
 import { Tutor } from './Tutor';
 
-import { IStudentTutors } from '@system/types';
+import { IStudentTutors, RelationshipType } from '@system/types';
 
 @Entity()
 export class StudentTutors implements IStudentTutors {
@@ -12,4 +12,10 @@ export class StudentTutors implements IStudentTutors {
 
   @ManyToOne(() => Tutor, { primary: true })
   tutor: Tutor;
+
+  @Column({
+    type: 'enum',
+    enum: RelationshipType,
+  })
+  relationship: RelationshipType;
 }
