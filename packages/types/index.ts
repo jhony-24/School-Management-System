@@ -5,6 +5,7 @@ import FirebaseFileType from './src/FirebaseFileType';
 import FirebaseImage from './src/FirebaseImage';
 import PersonStateType from './src/PersonStateType';
 import PublicationType from './src/PublicationType';
+import RelationshipType from './src/RelationshipType';
 import SchoolGradeType from './src/SchoolGradeType';
 import UserType from './src/UserType';
 
@@ -16,6 +17,7 @@ export {
   FirebaseImage,
   PersonStateType,
   PublicationType,
+  RelationshipType,
   SchoolGradeType,
   UserType,
 };
