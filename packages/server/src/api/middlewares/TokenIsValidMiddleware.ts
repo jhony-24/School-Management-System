@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 
-import TokenIsCaduced from '@services/TokenDecode';
+import TokenDecode from '@services/TokenDecode';
 import TokenFormatIsValid from '@services/TokenFormatIsValid';
 
 export const TokenIsValidMiddleware = (
@@ -20,7 +20,7 @@ export const TokenIsValidMiddleware = (
     return;
   }
 
-  const payload = new TokenIsCaduced().decode(token);
+  const payload = new TokenDecode().decode(token);
   if (!payload) {
     res.status(404).json({ message: 'Token caduced' });
     return;
