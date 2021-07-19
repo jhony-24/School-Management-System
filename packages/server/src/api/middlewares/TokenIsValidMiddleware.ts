@@ -1,9 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
 
-import TokenIsCaduced from '@services/TokenIsCaduced';
+import TokenIsCaduced from '@services/TokenDecode';
 import TokenFormatIsValid from '@services/TokenFormatIsValid';
 
-const TokenIsValidMiddleware = (
+export const TokenIsValidMiddleware = (
   req: Request,
   res: Response,
   next: NextFunction
@@ -20,13 +20,14 @@ const TokenIsValidMiddleware = (
     return;
   }
 
-  const token_is_caduced = new TokenIsCaduced().isCaduced(token);
-  if (token_is_caduced) {
+  const payload = new TokenIsCaduced().decode(token);
+  if (!payload) {
     res.status(404).json({ message: 'Token caduced' });
     return;
   }
 
+  req.body.userId = payload.userId;
+  req.body.userType = payload.userType;
+
   next();
 };
-
-export default TokenIsValidMiddleware;

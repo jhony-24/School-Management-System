@@ -32,7 +32,7 @@
     "dev:design-system": "lerna exec --scope @system/design-system -- yarn dev",
     "dev:server": "lerna exec --scope @system/server -- yarn dev",
     "test:client": "lerna exec --scope @system/design-system -- yarn test",
-    "test:server": "lerna exec --scope @system/server -- yarn test",
+    "test:server": "lerna exec --scope @system/server -- yarn test:watch",
     "build:client": "lerna exec --scope @system/client -- yarn build",
     "build:server": "lerna exec --scope @system/server -- yarn build",
     "build:design-system": "lerna exec --scope @system/design-system -- yarn build",
