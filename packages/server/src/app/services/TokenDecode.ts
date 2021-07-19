@@ -7,7 +7,7 @@ import { TokenPayload } from '@localtypes/TokenPayload';
 class TokenDecode implements ITokenDecode {
   decode(token: string): TokenPayload | null {
     try {
-      const verify_token = jwt.verify(token, TOKEN_KEY);
+      const verify_token = jwt.verify(token, TOKEN_KEY) as TokenPayload;
       return verify_token;
     } catch (error) {
       return null;
