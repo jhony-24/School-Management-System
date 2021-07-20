@@ -2,6 +2,15 @@ import { firestore } from 'firebase-admin';
 
 import DateRangeType from '../../DateRangeType';
 
+
+export interface IAssistance {
+  createdAt: firestore.Timestamp | string;
+  students: {
+    studentId: string;
+    reason?: string;
+  }[]
+}
+
 interface IClassroomCalendar {
   id: string;
   classroomId: string;
@@ -11,13 +20,7 @@ interface IClassroomCalendar {
     type: string;
     date: firestore.Timestamp;
   }[];
-  assistance: {
-    createdAt: firestore.Timestamp;
-    students: {
-      studentId: string;
-      reason?: string;
-    }[];
-  }[];
+  assistance: IAssistance[];
 }
 
 export default IClassroomCalendar;
