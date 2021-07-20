@@ -1,13 +1,17 @@
-import { firestore } from "firebase-admin";
 
 export interface MarkStudentAttendancePayload {
     classroomId : string;
     studentId : string;
-    date: firestore.Timestamp;
+    date: string;
     reason?: string;
 }
 
+export interface IStudentAttendance {
+    studentId: string; 
+    reason?: string   
+}
+
 export interface IMarkStudentAttendance {
-    markStudentAttendance(payload : MarkStudentAttendancePayload): Promise<boolean> 
+    mark(payload : MarkStudentAttendancePayload): Promise<boolean> 
 }
   

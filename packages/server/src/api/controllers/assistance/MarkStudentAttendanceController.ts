@@ -8,7 +8,7 @@ export default class MarkStudentAttendanceController implements Controller {
     const body: MarkStudentAttendancePayload = req.body;
     const service = new MarkStudentAttendanceService();
     try {
-      const data = await service.markStudentAttendance(body);
+      const data = await service.mark(body);
       return res.status(200).json(data);
     } catch (error) {
       return res.status(404).json({
