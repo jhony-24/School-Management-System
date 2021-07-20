@@ -13,4 +13,5 @@ export default class GetClassroomCalendarService
     const response = await classroomCalendarRepository.findOne();
     return response;
   }
+
 }
