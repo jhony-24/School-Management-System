@@ -1,3 +1,5 @@
-export interface ITokenIsCaduced {
-  isCaduced(token: string): boolean;
+import { TokenPayload } from '@localtypes/TokenPayload';
+
+export interface ITokenDecode {
+  decode(token: string): TokenPayload | null;
 }

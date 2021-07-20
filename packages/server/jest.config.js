@@ -5,7 +5,6 @@ module.exports = {
   testEnvironment: 'node',
   setupFilesAfterEnv: ["./src/setupTest.ts"],
   testRegex: ["(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|ts?)"],
-  collectCoverage: true,
   moduleNameMapper: {
     "@controllers/(.*)": "<rootDir>/src/api/controllers/$1",
     "@middlewares/(.*)": "<rootDir>/src/api/middlewares/$1",
