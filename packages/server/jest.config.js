@@ -15,6 +15,7 @@ module.exports = {
     "@utils/(.*)": "<rootDir>/src/app/utils/$1",
     "@localtypes/(.*)": "<rootDir>/src/app/types/$1",
     "@config/(.*)": "<rootDir>/src/config/$1",
+    "@mocks/(.*)": "<rootDir>/src/__mocks__/$1",
     "@api": "<rootDir>/src/api/index.ts",
     "@keys/(.*)" : "<rootDir>/src/keys/$1"
   },
