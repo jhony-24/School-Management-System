@@ -4,13 +4,10 @@ import { IClassroomStudentPerYear } from '@system/types';
 import { Student } from './Student';
 
 @Entity()
-export class ClassroomStudentPerYear implements IClassroomStudentPerYear {
+export class ClassroomStudent implements IClassroomStudentPerYear {
   @ManyToOne(() => Student, { primary: true })
   student: Student;
 
   @Column({ type: 'varchar', primary: true })
   classroomId: string;
-
-  @Column()
-  year: string;
 }

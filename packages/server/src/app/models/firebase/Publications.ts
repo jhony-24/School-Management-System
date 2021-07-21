@@ -6,7 +6,7 @@ import {
 } from '@system/types';
 
 @Collection()
-class Publications {
+export class Publications {
   id: string;
   classroomId: string;
   name: string;
@@ -15,5 +15,3 @@ class Publications {
   files: FirebaseFileType[];
   limitDate: DateRangeType;
 }
-
-export default Publications;

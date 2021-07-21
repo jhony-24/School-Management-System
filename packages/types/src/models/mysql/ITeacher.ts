@@ -5,7 +5,6 @@ import PersonStateType from '../../PersonStateType';
 interface ITeacher {
   id: string;
   user: IUser;
-  classroomId: string;
   state: PersonStateType;
   nickname: string;
   email: string;

@@ -9,7 +9,7 @@ export class User implements IUser {
   @Column({ type: 'varchar' })
   fullName: string;
 
-  @Column({ type: 'char', length: 8 })
+  @Column({ type: 'char', length: 8, unique: true })
   dni: string;
 
   @Column({ type: 'varchar' })
@@ -18,6 +18,6 @@ export class User implements IUser {
   @Column({ type: 'date' })
   dayOfBirth: Date;
 
-  @Column('simple-json')
+  @Column({ type: 'simple-json' })
   profileImage: FirebaseImage;
 }
