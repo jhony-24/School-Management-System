@@ -1,13 +1,13 @@
-import DateRangeType from '../../DateRangeType';
+import { firestore } from 'firebase-admin';
+
 import SchoolGradeType from '../../SchoolGradeType';
 
 interface IClassroom {
   id: string;
   name: string;
   teacherId: string;
-  //state : StateType
   grade: SchoolGradeType;
-  activeDate: DateRangeType;
+  createdAt: firestore.Timestamp;
 }
 
 export default IClassroom;

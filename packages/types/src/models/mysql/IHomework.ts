@@ -1,6 +1,7 @@
 import IStudent from './IStudent';
 
 import FirebaseFileType from '../../FirebaseFileType';
+import { firestore } from 'firebase-admin';
 
 interface IHomework {
   id: string;
@@ -8,7 +9,7 @@ interface IHomework {
   publicationId: string;
   comment: string;
   file: FirebaseFileType[];
-  createdAt: string;
+  createdAt: firestore.Timestamp;
 }
 
 export default IHomework;

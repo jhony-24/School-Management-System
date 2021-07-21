@@ -7,7 +7,7 @@ import { Homework } from '@models/mysql/Homework';
 import { Student } from '@models/mysql/Student';
 import { Teacher } from '@models/mysql/Teacher';
 import { StudentTutors } from '@models/mysql/StudentTutors';
-import { ClassroomStudentPerYear } from '@models/mysql/ClassroomStudentPerYear';
+import { ClassroomStudent } from '@models/mysql/ClassroomStudent';
 
 import Logger from '@utils/Logger';
 
@@ -19,7 +19,7 @@ import {
   MYSQL_USERNAME,
 } from './environments';
 
-const mysqlInitialize = async () => {
+const mysqlInitialize = async (dropSchema?: boolean) => {
   try {
     await createConnection({
       username: MYSQL_USERNAME,
@@ -29,7 +29,7 @@ const mysqlInitialize = async () => {
       host: MYSQL_HOST,
       type: 'mysql',
       synchronize: true,
-      // dropSchema: true,
+      dropSchema,
       entities: [
         User,
         Student,
@@ -38,7 +38,7 @@ const mysqlInitialize = async () => {
         Director,
         StudentTutors,
         Homework,
-        ClassroomStudentPerYear,
+        ClassroomStudent,
       ],
     });
   } catch (error) {

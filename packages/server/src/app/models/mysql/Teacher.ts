@@ -19,9 +19,6 @@ export class Teacher implements ITeacher {
   @JoinColumn()
   user: User;
 
-  @Column('varchar')
-  classroomId: string;
-
   @Column({
     type: 'enum',
     enum: PersonStateType,

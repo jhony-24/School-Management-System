@@ -11,7 +11,7 @@ export class Tutor implements ITutor {
   @Column({ type: 'char', length: 9 })
   phone: string;
 
-  @Column({ type: 'char', length: 8 })
+  @Column({ type: 'char', length: 8, unique: true })
   dni: string;
 
   @Column({ type: 'varchar' })

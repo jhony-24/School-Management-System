@@ -3,7 +3,7 @@ import { Collection } from 'fireorm';
 import { DateRangeType, IClassroomCalendar } from '@system/types';
 
 @Collection()
-class ClassroomCalendar implements IClassroomCalendar {
+export class ClassroomCalendar implements IClassroomCalendar {
   id: string;
   classroomId: string;
   year: firestore.Timestamp;
@@ -20,5 +20,3 @@ class ClassroomCalendar implements IClassroomCalendar {
     }[];
   }[];
 }
-
-export default ClassroomCalendar;

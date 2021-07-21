@@ -29,5 +29,6 @@ export class Student implements IStudent {
   state: PersonStateType;
 
   @OneToMany(() => Homework, (homework) => homework.student)
+  @JoinColumn()
   homeworks: Homework[];
 }
