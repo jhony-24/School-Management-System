@@ -4,7 +4,7 @@ import { FilePermissionType, IFileSection } from '@system/types';
 //Figma Refactor
 
 @Collection()
-class FileSection implements IFileSection {
+export class FileSection implements IFileSection {
   id: string;
   name: string;
   permissions: {
@@ -12,5 +12,3 @@ class FileSection implements IFileSection {
     type: FilePermissionType;
   };
 }
-
-export default FileSection;

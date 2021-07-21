@@ -1,14 +1,12 @@
 import { Collection } from 'fireorm';
-import { DateRangeType, SchoolGradeType, IClassroom } from '@system/types';
+import { firestore } from 'firebase-admin';
+import { SchoolGradeType, IClassroom } from '@system/types';
 
 @Collection()
-class Classroom implements IClassroom {
+export class Classroom implements IClassroom {
   id: string;
   name: string;
   teacherId: string;
-  //state : StateType
   grade: SchoolGradeType;
-  activeDate: DateRangeType;
+  createdAt: firestore.Timestamp;
 }
-
-export default Classroom;
