@@ -1,5 +1,5 @@
 import { currentClassroomAssistanceMock } from "@mocks/markStudentAttendance.mock";
-import StudentAttendance from "@services/StudentAttendance";
+import StudentAttendance from "@services/firebase/MarkStudentAttendance/StudentAttendance";
 
 describe('StudentAttendance', () => {
     let studentAttendance !: StudentAttendance;

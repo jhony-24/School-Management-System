@@ -1,6 +1,5 @@
 import { IStudentAttendance } from '@interfaces/IMarkStudentAttendance';
-import { IClassroomCalendar } from '@system/types';
-import { IAssistance } from '../../../../types/src/models/firebase/IClassroomCalendar';
+import { IClassroomCalendar, IAssistance } from '@system/types';
 
 export default class StudentAttendance {
   private assistanceIndex!: number;

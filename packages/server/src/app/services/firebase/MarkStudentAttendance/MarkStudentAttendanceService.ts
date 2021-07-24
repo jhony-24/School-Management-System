@@ -3,7 +3,7 @@ import {
   MarkStudentAttendancePayload,
 } from '@interfaces/IMarkStudentAttendance';
 import ClassroomCalendar from '@models/firebase/ClassroomCalendar';
-import StudentAttendance from '@services/StudentAttendance';
+import StudentAttendance from './StudentAttendance';
 import { getRepository } from 'fireorm';
 
 export default class MarkStudentAttendanceService implements IMarkStudentAttendance {
@@ -18,8 +18,7 @@ export default class MarkStudentAttendanceService implements IMarkStudentAttenda
             throw new Error('Clase no encontrada');
           }
           const studentAttendance = new StudentAttendance(classroomCalendar);
-          const currentAssistanceIndex =
-            studentAttendance.getCurrentIndexAssistanceByDate(date);
+          const currentAssistanceIndex = studentAttendance.getCurrentIndexAssistanceByDate(date);
           const assistance = studentAttendance.getCurrentAssistance();
           const student = studentAttendance.getStudentFromAssistance(
             studentId,

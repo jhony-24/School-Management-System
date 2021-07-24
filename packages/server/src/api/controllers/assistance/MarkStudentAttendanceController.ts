@@ -1,6 +1,6 @@
 import { MarkStudentAttendancePayload } from '@interfaces/IMarkStudentAttendance';
 import { Controller } from '@localtypes/Controller';
-import MarkStudentAttendanceService from '@services/firebase/MarkStudentAttendanceService';
+import MarkStudentAttendanceService from '@services/firebase/MarkStudentAttendance/MarkStudentAttendanceService';
 import { Request, Response } from 'express';
 
 export default class MarkStudentAttendanceController implements Controller {
