@@ -13,7 +13,6 @@
       "@services/*" : ["app/services/*"],
       "@utils/*" : ["app/utils/*"],
       "@models/*" : ["app/models/*"],
-      "@keys/*" : ["keys/*"],
     },
     "target": "es6",
     "module": "CommonJS",
