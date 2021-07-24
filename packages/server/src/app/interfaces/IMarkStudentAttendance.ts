@@ -1,3 +1,4 @@
+import { IAssistance } from "../../../../types";
 
 export interface MarkStudentAttendancePayload {
     classroomId : string;
@@ -12,6 +13,6 @@ export interface IStudentAttendance {
 }
 
 export interface IMarkStudentAttendance {
-    mark(payload : MarkStudentAttendancePayload): Promise<boolean> 
+    mark(payload : MarkStudentAttendancePayload): Promise<IAssistance> 
 }
   
