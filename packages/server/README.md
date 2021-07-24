@@ -17,8 +17,9 @@ To use firebase you need to create a **firestore_secret_key.json** file
 
 ```
 /src
-  /keys
-    firestore_secret_key.json
+  /config
+    /private
+      firestore_secret_key.json
 ```
 
 [https://console.firebase.google.com/u/0/](https://console.firebase.google.com/u/0/)
