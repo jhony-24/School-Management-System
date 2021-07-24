@@ -1,3 +1,10 @@
+export const createdDateAssistanceMock = '20/07/2021 9:00:00am';
+export const studentIdMock = "me";
+export const classroomIdMock = "b000";
+
+/**
+ * Used mock in testing
+ */
 export const currentClassroomAssistanceMock = {
   classroomId: 'b000',
   assistance: [
@@ -32,6 +39,9 @@ export const currentClassroomAssistanceMock = {
   ],
 };
 
+/**
+ * Insert this array in your firebase service to have the required data
+ */
 export const classroomCalendarMock = [
   {
     classroomId: 'a000',
