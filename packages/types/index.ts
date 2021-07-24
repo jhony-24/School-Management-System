@@ -45,7 +45,7 @@ export {
 
 //FIREBASE TYPES
 import IClassroom from './src/models/firebase/IClassroom';
-import IClassroomCalendar from './src/models/firebase/IClassroomCalendar';
+import IClassroomCalendar, { IAssistance } from './src/models/firebase/IClassroomCalendar';
 import IFileSection from './src/models/firebase/IFileSection';
 import IPublications from './src/models/firebase/IPublications';
 import ISchool from './src/models/firebase/ISchool';
@@ -53,6 +53,7 @@ import ISystemStorage from './src/models/firebase/ISystemStorage';
 
 export {
   IClassroom,
+  IAssistance,
   ISchool,
   IPublications,
   IFileSection,
