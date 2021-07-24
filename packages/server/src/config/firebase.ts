@@ -2,7 +2,7 @@ import * as fireorm from 'fireorm';
 import * as admin from 'firebase-admin';
 
 import Logger from '@utils/Logger';
-import FirestoreSecretKey from '@keys/firestore_secret_key.json';
+import FirestoreSecretKey from './private/firestore_secret_key.json';
 
 const firebaseInitialize = async () => {
   if (admin.apps.length) return;
