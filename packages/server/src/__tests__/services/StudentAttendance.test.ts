@@ -1,50 +1,58 @@
-import { currentClassroomAssistanceMock } from "@mocks/markStudentAttendance.mock";
-import StudentAttendance from "@services/firebase/MarkStudentAttendance/StudentAttendance";
+import { currentClassroomAssistanceMock } from '@mocks/markStudentAttendance.mock';
+import GetCurrentAssistanceByDate from '@services/firebase/MarkStudentAttendance/GetCurrentAssistanceByDate';
+import StudentAttendance from '@services/firebase/MarkStudentAttendance/StudentAttendance';
+import StudentFromAssistance from '@services/firebase/MarkStudentAttendance/StudentFromAssistance';
+
+const data =  currentClassroomAssistanceMock as any;
 
 describe('StudentAttendance', () => {
-    let studentAttendance !: StudentAttendance;
 
-    beforeEach(() => {
-        studentAttendance = new StudentAttendance(currentClassroomAssistanceMock as any);
-    })
+  test('should exists the current assistance by date', () => {
+    const date = '20/07/2021 9:00:00am';
+    const getCurrentAssistance = new GetCurrentAssistanceByDate(data,date);
+    const { index } = getCurrentAssistance.getAssistance();
+    expect(index).not.toBe(-1);
+    expect(index).toBeGreaterThan(-1);
+  });
 
-    test('should exists the current assistance by date', () => {
-        const date = "20/07/2021 9:00:00am";
-        const expectedIndex = studentAttendance.getCurrentIndexAssistanceByDate(date)
-        expect(expectedIndex).not.toBe(-1);
-        expect(expectedIndex).toBeGreaterThan(-1);
-        expect(studentAttendance.existsCurrentIndex()).toBeTruthy();
-    })
+  test('should emit an error if not exists the classroom by date', () => {
+    const date = '20/07/2024 06:00:00am';
+    const getCurrentAssistance = new GetCurrentAssistanceByDate(data,date);
+    const { index } = getCurrentAssistance.getAssistance();
+    expect(index).toBe(-1);
+  });
 
-    test('should emit an error if not exists the classroom by date', () => {
-        const date = "20/07/2024 06:00:00am";
-        const expectedIndex = studentAttendance.getCurrentIndexAssistanceByDate(date)
-        expect(expectedIndex).toBe(-1);
-        expect(studentAttendance.existsCurrentIndex()).toBeFalsy();
-    })
+  test('should exists a student by assistance date and studentId', () => {
+    const date = '20/07/2021 9:00:00am';
+    const studentId = "me";
+    const getCurrentAssistance = new GetCurrentAssistanceByDate(data,date);
+    const studentFromAssistance = new StudentFromAssistance(
+      getCurrentAssistance,
+      studentId,
+    );
+    const { index } = getCurrentAssistance.getAssistance();
+    expect(index).not.toBe(-1);
+    expect(index).toBeGreaterThan(-1);
+    expect(studentFromAssistance.getStudent()).toMatchObject({
+      studentId: 'me',
+    });
+  });
 
-    test('should exists a student by assistance date and studentId', () => {
-        const date = "20/07/2021 9:00:00am";
-        const expectedIndex = studentAttendance.getCurrentIndexAssistanceByDate(date)
-        const student = studentAttendance.getStudentFromAssistance("me",studentAttendance.getCurrentAssistance());
-        expect(expectedIndex).not.toBe(-1);
-        expect(expectedIndex).toBeGreaterThan(-1);
-        expect(student).toMatchObject({
-            studentId : "me"
-        });
-    })
-
-    
-    test('should remove an student if exists in the assistance', () => {
-        const date = "20/07/2021 9:00:00am";
-        studentAttendance.getCurrentIndexAssistanceByDate(date)
-        const assistance = studentAttendance.getCurrentAssistance();
-        const totalStudents = assistance.students.length;
-        const student = studentAttendance.getStudentFromAssistance("me",assistance);
-        expect(student).toMatchObject({
-            studentId : "me"
-        });
-        const newListStudents = studentAttendance.removeStudentFromAssistance(student,assistance);
-        expect(newListStudents.length).toBeLessThan(totalStudents);
-    })
-})
+  test('should remove an student if exists in the assistance', () => {
+    const date = '20/07/2021 9:00:00am';
+    const studentId = "me";
+    const getCurrentAssistance = new GetCurrentAssistanceByDate(data,date);
+    const studentFromAttendance = new StudentFromAssistance(
+        getCurrentAssistance,
+        studentId,
+    );
+    const studentAttendance = new StudentAttendance(getCurrentAssistance,studentFromAttendance);
+    const expectedStudents = studentAttendance.removeStudentFromAssistance();    
+    const expectedStudent = studentFromAttendance.getStudent();   
+    const totalStudents = getCurrentAssistance.getAssistance().assistance.students.length; 
+    expect(expectedStudent).toMatchObject({
+      studentId: 'me',
+    });
+    expect(expectedStudents.length).toBeLessThan(totalStudents);
+  });
+});

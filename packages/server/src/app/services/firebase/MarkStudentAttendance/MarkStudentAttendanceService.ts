@@ -2,43 +2,42 @@ import {
   IMarkStudentAttendance,
   MarkStudentAttendancePayload,
 } from '@interfaces/IMarkStudentAttendance';
-import ClassroomCalendar from '@models/firebase/ClassroomCalendar';
+import { ClassroomCalendar } from '@models/firebase/ClassroomCalendar';
 import StudentAttendance from './StudentAttendance';
 import { getRepository } from 'fireorm';
+import GetCurrentAssistanceByDate from './GetCurrentAssistanceByDate';
+import StudentFromAssistance from './StudentFromAssistance';
 
-export default class MarkStudentAttendanceService implements IMarkStudentAttendance {
+export default class MarkStudentAttendanceService
+  implements IMarkStudentAttendance
+{
   async mark(payload: MarkStudentAttendancePayload): Promise<boolean> {
     const { studentId, classroomId, date, reason } = payload;
     const classroomRepository = getRepository(ClassroomCalendar);
 
-    const response = await classroomRepository.runTransaction( async (transaction) => {
+    const response = await classroomRepository.runTransaction(async (transaction) => {
         try {
-          const classroomCalendar = await transaction.whereEqualTo('classroomId', classroomId).findOne();
+          const classroomCalendar = await transaction
+            .whereEqualTo('classroomId', classroomId)
+            .findOne();
           if (!classroomCalendar) {
             throw new Error('Clase no encontrada');
           }
-          const studentAttendance = new StudentAttendance(classroomCalendar);
-          const currentAssistanceIndex = studentAttendance.getCurrentIndexAssistanceByDate(date);
-          const assistance = studentAttendance.getCurrentAssistance();
-          const student = studentAttendance.getStudentFromAssistance(
-            studentId,
-            assistance
-          );
+          const getCurrentAssistance = new GetCurrentAssistanceByDate(classroomCalendar,date);
+          const studentFromAssistance = new StudentFromAssistance(getCurrentAssistance,studentId);
+          const studentAttendance = new StudentAttendance(getCurrentAssistance,studentFromAssistance);
+          const { index } =  getCurrentAssistance.getAssistance();
+          const exists = studentFromAssistance.getStudent();
 
-          if (student) {
-            const newStudents = studentAttendance.removeStudentFromAssistance(
-              student,
-              assistance
-            );
-            classroomCalendar.assistance[currentAssistanceIndex].students = newStudents;
+          if (exists) {
+            const newStudents = studentAttendance.removeStudentFromAssistance();
+            classroomCalendar.assistance[index].students = newStudents;
           } else {
             const newStudent = {
               studentId,
               reason,
             };
-            classroomCalendar.assistance[currentAssistanceIndex].students.push(
-              newStudent
-            );
+            classroomCalendar.assistance[index].students.push(newStudent);
           }
 
           await transaction.update(classroomCalendar);
@@ -46,7 +45,8 @@ export default class MarkStudentAttendanceService implements IMarkStudentAttenda
         } catch (error) {
           throw new Error(error.message);
         }
-    });
+      }
+    );
     return response;
   }
 }
