@@ -10,4 +10,7 @@ export class ClassroomStudent implements IClassroomStudent {
 
   @Column({ type: 'varchar', primary: true })
   classroomId: string;
+
+  @Column({ type: 'varchar' })
+  year: string;
 }

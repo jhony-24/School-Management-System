@@ -8,6 +8,7 @@ import PublicationType from './src/PublicationType';
 import RelationshipType from './src/RelationshipType';
 import SchoolGradeType from './src/SchoolGradeType';
 import UserType from './src/UserType';
+import PublicationsFormated from './src/PublicationsFormated';
 
 // MYSQL TYPES
 import IStudentTutors from './src/models/mysql/IStudentTutors';
@@ -40,9 +41,11 @@ export {
   RelationshipType,
   SchoolGradeType,
   UserType,
+  PublicationsFormated,
 };
 
 export {
+  IClassroomStudent,
   IDirector,
   IHomework,
   IStudent,
@@ -59,6 +62,5 @@ export {
   IPublications,
   IFileSection,
   IClassroomCalendar,
-  ISystemStorage,
-  IClassroomStudent,
+  ISystemStorage
 };
