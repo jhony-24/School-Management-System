@@ -1,25 +1,17 @@
-# Tecnologías:
+# School management system
 
-### General
-* Typescript
-* Eslint
-* Prettier
 
-### Frontend
-* Jotai y Zustand
-* NodeJS
-* ReactJS
-* Firebase
-* StoryBook
-* Styled Components
-* WebPack
-* Downshift
-* Etc.
+## Proyectos:
+* [Application](./application.md)
+* [Types](./types.md)
+* [Server](./server.md)
 
-### Backend
 
-* NodeJs
-* MySQL
-* TypeORM
-* Express
-* Etc.
+## Principales tecnologías:
+
+| Categoría | Tecnologías   
+ -- | --
+| General  | Typescript, Eslint, Prettier, Lerna
+| Mobile  | Jotai, Zustand, React Native, Styled Components, etc.
+| Backend  | NodeJs, MySQL, TypeORM, FireORM, Firebase, Express, etc.
+
