@@ -34,7 +34,7 @@ describe('StudentAttendance', () => {
     const getCurrentAssistance = CurrentAssistanceDate(data, date);
     const studentFromAssistance = new StudentFromAssistance(
       getCurrentAssistance,
-      new StudentId(studentId)
+      new StudentId(studentId),
     );
     const { index } = getCurrentAssistance.getAssistance();
     expect(index).not.toBe(-1);
@@ -50,16 +50,15 @@ describe('StudentAttendance', () => {
     const getCurrentAssistance = CurrentAssistanceDate(data, date);
     const studentFromAttendance = new StudentFromAssistance(
       getCurrentAssistance,
-      new StudentId(studentId)
+      new StudentId(studentId),
     );
     const studentAttendance = new StudentAttendance(
       getCurrentAssistance,
-      studentFromAttendance
+      studentFromAttendance,
     );
     const expectedStudents = studentAttendance.removeStudentFromAssistance();
     const expectedStudent = studentFromAttendance.getStudent();
-    const totalStudents =
-      getCurrentAssistance.getAssistance().assistance.students.length;
+    const totalStudents = getCurrentAssistance.getAssistance().assistance.students.length;
     expect(expectedStudent).toMatchObject({
       studentId: 'me',
     });

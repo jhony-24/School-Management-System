@@ -1,9 +1,8 @@
 import express from 'express';
 import request from 'supertest';
 
-import { server } from '../../server';
-
 import { TokenIsValidMiddleware } from '@middlewares/TokenIsValidMiddleware';
+import { server } from '../../server';
 
 describe('Token validate middleware', () => {
   const app = express();

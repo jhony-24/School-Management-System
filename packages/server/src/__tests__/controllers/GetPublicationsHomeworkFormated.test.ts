@@ -1,10 +1,8 @@
-import { server } from '../../server';
 import express from 'express';
 import request from 'supertest';
 import mysqlInitialize from '@config/mysql';
 import firebaseInitialize from '@config/firebase';
-
-const app = express();
+import { server } from '../../server';
 
 describe('Validando el endpoint', () => {
   const app = express();

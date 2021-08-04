@@ -3,6 +3,7 @@ module.exports = {
   preset: 'ts-jest',
   clearMocks: true,
   testEnvironment: 'node',
+  testTimeout: 60000,
   setupFilesAfterEnv: ["./src/setupTest.ts"],
   testRegex: ["(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|ts?)"],
   moduleNameMapper: {
@@ -15,7 +16,7 @@ module.exports = {
     "@utils/(.*)": "<rootDir>/src/app/utils/$1",
     "@localtypes/(.*)": "<rootDir>/src/app/types/$1",
     "@config/(.*)": "<rootDir>/src/config/$1",
-    "@mocks/(.*)": "<rootDir>/src/__mocks__/$1",
+    "@mocks/(.*)": "<rootDir>/src/__mocks__/$1", 
     "@api": "<rootDir>/src/api/index.ts",
   },
 };

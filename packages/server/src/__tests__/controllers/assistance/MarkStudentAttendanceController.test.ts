@@ -1,10 +1,10 @@
 import express from 'express';
 import request from 'supertest';
-import { server } from '../../../server';
 import firebaseConnection from '@config/firebase';
 import { AdapterController } from '@utils/AdapterController';
 import MarkStudentAttendanceController from '@controllers/assistance/MarkStudentAttendanceController';
 import { classroomIdMock, createdDateAssistanceMock, studentIdMock } from '@mocks/markStudentAttendance.mock';
+import { server } from '../../../server';
 
 describe('MarkStudentAttendance controller', () => {
   const app = express();
@@ -17,7 +17,7 @@ describe('MarkStudentAttendance controller', () => {
   test('should emit a error if the user does not send body', (done) => {
     app.post(
       '/assistance/mark',
-      AdapterController(MarkStudentAttendanceController)
+      AdapterController(MarkStudentAttendanceController),
     );
     request(app)
       .post('/assistance/mark')
@@ -28,13 +28,13 @@ describe('MarkStudentAttendance controller', () => {
 
   test('should not exists the classroomId', (done) => {
     const body = {
-      classroomId: "abc124124abc",
+      classroomId: 'abc124124abc',
       studentId: studentIdMock,
       date: createdDateAssistanceMock,
     };
     app.post(
       '/assistance/mark',
-      AdapterController(MarkStudentAttendanceController)
+      AdapterController(MarkStudentAttendanceController),
     );
     request(app)
       .post('/assistance/mark')
@@ -52,7 +52,7 @@ describe('MarkStudentAttendance controller', () => {
     };
     app.post(
       '/assistance/mark',
-      AdapterController(MarkStudentAttendanceController)
+      AdapterController(MarkStudentAttendanceController),
     );
     request(app)
       .post('/assistance/mark')
@@ -61,7 +61,7 @@ describe('MarkStudentAttendance controller', () => {
       .expect(200)
       .expect((response) => {
         const expectedBody = response.body;
-        expect(expectedBody).toHaveProperty("students");
+        expect(expectedBody).toHaveProperty('students');
       })
       .end(done);
   });
