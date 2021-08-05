@@ -13,24 +13,24 @@ export const TokenIsValidMiddleware = (
 ) => {
   const { authorization } = req.headers as RequestControllerType;
   if (!authorization) {
-    res.status(404).json({ MESSAGE: 'Token undefined' });
+    res.status(404).json({ message: 'Token undefined' });
     return;
   }
 
   const token = new TokenFormatIsValid().getToken(authorization);
   if (!token) {
-    res.status(404).json({ MESSAGE: 'Invalid Token Format' });
+    res.status(404).json({ message: 'Invalid Token Format' });
     return;
   }
 
   const payload = new TokenDecode().decode(token);
   if (!payload) {
-    res.status(404).json({ MESSAGE: 'Token caduced' });
+    res.status(404).json({ message: 'Token caduced' });
     return;
   }
 
-  req.body.USER_ID = payload.userId;
-  req.body.USER_TYPE = payload.userType;
+  req.body.user_id = payload.user_id;
+  req.body.user_type = payload.user_type;
 
   next();
 };

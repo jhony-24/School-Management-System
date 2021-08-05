@@ -6,7 +6,7 @@ import { GetUserController } from '@controllers/auth/GetUserController';
 
 const app = Router();
 
-app.get('/renewSession', TokenIsValidMiddleware, AdapterController(GetUserController));
+app.get('/recovery-session', TokenIsValidMiddleware, AdapterController(GetUserController));
 app.post('/', AuthenticationUserMiddleware, AdapterController(GetUserController));
 
 export default app;

@@ -1,34 +1,34 @@
-import { GetUserServices } from '@services/mysql/GetUser';
+import { GetUserByType } from '@services/mysql/GetUserByType';
 import { Controller } from '@localtypes/Controller';
 import { Request, Response } from 'express';
 import { UserType } from '@system/types';
 
 type RequestControllerType = {
-  USER_ID : string,
-  USER_TYPE : UserType,
-  TOKEN_GENERATED : string,
+  user_id : string,
+  user_type : UserType,
+  token_generated : string,
 }
 
 export class GetUserController implements Controller {
   async start(req:Request, res:Response) {
     try {
-      const { USER_ID, USER_TYPE, TOKEN_GENERATED } = req.body as RequestControllerType;
-      const userRepository = GetUserServices[USER_TYPE];
-      const USER_DATA = await userRepository.getData(USER_ID);
-      if (!USER_DATA) {
-        res.status(404).json({ MESSAGE: 'Tipo de usuario incorrecto' });
+      const { user_id, user_type, token_generated } = req.body as RequestControllerType;
+      const user_repository = GetUserByType[user_type];
+      const user_data = await user_repository.getData(user_id);
+      if (!user_data) {
+        res.status(404).json({ message: 'Tipo de usuario incorrecto' });
         return;
       }
-      if (!TOKEN_GENERATED) {
-        res.status(200).json({ USER_DATA });
+      if (!token_generated) {
+        res.status(200).json({ user_data });
         return;
       }
       res.status(200).json({
-        USER_DATA,
-        TOKEN_GENERATED,
+        user_data,
+        token_generated,
       });
     } catch (error) {
-      res.status(500).json({ MESSAGE: error.message });
+      res.status(500).json({ message: error.message });
     }
   }
 }

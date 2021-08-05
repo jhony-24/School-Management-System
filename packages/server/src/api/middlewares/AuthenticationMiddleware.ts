@@ -5,9 +5,9 @@ import CreateToken from '@services/CreateToken';
 import { UserType } from '@system/types';
 
 type RequestControllerType = {
-  DNI : string,
-  PASSWORD : string,
-  USER_TYPE : UserType,
+  dni : string,
+  password : string,
+  user_type : UserType,
 }
 
 export const AuthenticationUserMiddleware = async (
@@ -15,23 +15,23 @@ export const AuthenticationUserMiddleware = async (
   res: Response,
   next:NextFunction,
 ) => {
-  const { DNI, PASSWORD, USER_TYPE } = req.body as RequestControllerType;
+  const { dni, password, user_type } = req.body as RequestControllerType;
 
-  const USER_ID_RESPONSE = await new AuthenticationUser(new ComparePasswordWithBcrypt())
-    .authentication(DNI, PASSWORD);
-  if (!USER_ID_RESPONSE) {
-    res.status(404).json({ MESSAGE: 'Credenciales Incorrectas' });
+  const user_id_response = await new AuthenticationUser(new ComparePasswordWithBcrypt())
+    .authentication(dni, password);
+  if (!user_id_response) {
+    res.status(404).json({ message: 'Credenciales Incorrectas' });
     return;
   }
 
-  const TOKEN_GENERATED = new CreateToken().create(USER_ID_RESPONSE as string, USER_TYPE);
-  if (!TOKEN_GENERATED) {
+  const token_generated = new CreateToken().create(user_id_response as string, user_type);
+  if (!token_generated) {
     res.status(500).json({ message: 'No se pudo crear el token' });
     return;
   }
-  req.body.TOKEN_GENERATED = TOKEN_GENERATED;
-  req.body.USER_ID = USER_ID_RESPONSE;
-  req.body.USER_TYPE = USER_TYPE;
+  req.body.token_generated = token_generated;
+  req.body.user_id = user_id_response;
+  req.body.user_type = user_type;
   next();
 };
 
