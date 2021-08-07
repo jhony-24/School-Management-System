@@ -1,11 +1,12 @@
 {
   "name": "system",
-  "version": "independent",
+  "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "packages/**"
-  ],
-  "main": "index.js",
+  "workspaces": {
+    "packages": [
+      "packages/**"
+    ]
+  },
   "repository": "https://github.com/BiloCode/School-Management-System.git",
   "author": "BiloCode <billy_paredes_aycho@hotmail.com>",
   "license": "MIT",
@@ -25,7 +26,13 @@
     "prettier": "^2.3.2"
   },
   "scripts": {
+    "dev:native" : "lerna exec --scope @system/nativeapp -- yarn dev:native",
+    "dev:web" : "lerna exec --scope @system/nativeapp -- yarn dev:web",
+    "test:native" : "lerna exec --scope @system/nativeapp -- yarn test:native",
+    "test:web" : "lerna exec --scope @system/nativeapp -- yarn test:web",
     "dev:server": "lerna exec --scope @system/server -- yarn dev",
+    "build:android": "lerna exec --scope @system/nativeapp -- yarn build:android",
+    "build:web": "lerna exec --scope @system/nativeapp -- yarn build:web",
     "test:server": "lerna exec --scope @system/server -- yarn test:watch",
     "build:server": "lerna exec --scope @system/server -- yarn build",
     "postinstall": "husky install",
