@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Home from '@webscreen/Home';
+import Home from '../screens/web/Home';
 
 const RouterApplication = () => (
   <BrowserRouter>

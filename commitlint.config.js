@@ -5,6 +5,6 @@ module.exports = {
   extends: '@commitlint/config-conventional',
   rules: {
     'subject-min-length': [2, 'always'],
-    'scope-enum': [2, 'always', ['application', 'server', 'types']],
+    'scope-enum': [2, 'always', ['web_application', 'server', 'types']],
   },
 };
