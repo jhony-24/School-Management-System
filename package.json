@@ -26,13 +26,9 @@
     "prettier": "^2.3.2"
   },
   "scripts": {
-    "dev:native" : "lerna exec --scope @system/nativeapp -- yarn dev:native",
-    "dev:web" : "lerna exec --scope @system/nativeapp -- yarn dev:web",
-    "test:native" : "lerna exec --scope @system/nativeapp -- yarn test:native",
-    "test:web" : "lerna exec --scope @system/nativeapp -- yarn test:web",
+    "dev:app" : "lerna exec --scope @system/web_application -- yarn start",
+    "test:app" : "lerna exec --scope @system/web_application -- yarn jest",
     "dev:server": "lerna exec --scope @system/server -- yarn dev",
-    "build:android": "lerna exec --scope @system/nativeapp -- yarn build:android",
-    "build:web": "lerna exec --scope @system/nativeapp -- yarn build:web",
     "test:server": "lerna exec --scope @system/server -- yarn test:watch",
     "build:server": "lerna exec --scope @system/server -- yarn build",
     "postinstall": "husky install",
