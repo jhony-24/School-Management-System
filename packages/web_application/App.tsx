@@ -24,12 +24,12 @@ export default function App() {
     [Fonts.BLACK]: require('./src/assets/fonts/Raleway-Black.ttf'),
   });
 
-  const screenInApp = React.useMemo(() => {
+  const screenInApp = (() => {
     if (error) return <AppError message={error.message} />;
     if (!loaded) return <SourceLoading />;
 
     return <RouterApplication />;
-  }, []);
+  })();
 
   return (
     <View style={{ flex: 1 }}>
