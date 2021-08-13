@@ -15,10 +15,7 @@ import Fonts from './src/config/font';
 
 export default function App() {
   const [loaded, error] = Font.useFonts({
-    [Fonts.LIGHT]: require('./src/assets/fonts/Raleway-Light.ttf'),
     [Fonts.REGULAR]: require('./src/assets/fonts/Raleway-Regular.ttf'),
-    [Fonts.MEDIUM]: require('./src/assets/fonts/Raleway-Medium.ttf'),
-    [Fonts.SEMI_BOLD]: require('./src/assets/fonts/Raleway-SemiBold.ttf'),
     [Fonts.BOLD]: require('./src/assets/fonts/Raleway-Bold.ttf'),
     [Fonts.EXTRA_BOLD]: require('./src/assets/fonts/Raleway-ExtraBold.ttf'),
     [Fonts.BLACK]: require('./src/assets/fonts/Raleway-Black.ttf'),
