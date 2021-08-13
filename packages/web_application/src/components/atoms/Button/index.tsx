@@ -6,7 +6,7 @@ interface ButtonPropsType extends ButtonStylePropsType {
   text:string;
 }
 
-export const ButtonComponent : FC<ButtonPropsType> = ({
+export const Button : FC<ButtonPropsType> = ({
   size, color, ghost, text, opacity, onPress,
 }) => (
   <ButtonContent onPress={onPress} size={size} color={color} ghost={ghost} opacity={opacity}>
