@@ -11,7 +11,7 @@ import AppError from './src/components/templates/AppError';
 import SourceLoading from './src/components/templates/SourceLoading';
 import ScreenLimitator from './src/components/atoms/ScreenLimitator';
 
-import Fonts from './src/config/font';
+import { Fonts } from './src/styles/font';
 
 export default function App() {
   const [loaded, error] = Font.useFonts({

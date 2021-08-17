@@ -1,54 +1,39 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 
-//
-import { ButtonComponent } from '../../components/atoms/Button';
-import { Paragraph } from '../../components/atoms/Paragraph/style';
-import { Image } from '../../components/atoms/Image';
-import Fonts from '../../config/font';
+import Text from '../../components/atoms/Text';
+import Image from '../../components/atoms/Image';
+import Button from '../../components/atoms/Button';
+import HorizontalLimitator from '../../components/atoms/HorizontalLimitator';
 
-const HandleButton = () => console.log('Pressed me.');
+import { Fonts } from '../../styles/font';
+import { TColor } from '../../styles/text';
+import { BColor } from '../../styles/button';
 
 const ScreenTest = () => (
-  <View style={{
-    justifyContent: 'space-around', alignContent: 'space-around', flex: 1, backgroundColor: 'black',
-  }}
-  >
-    <Paragraph color="blue" size="small" font={Fonts.REGULAR}>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-      Tempora ipsam optio accusamus quo, aliquid ea! Voluptas amet
-      saepe fuga! Laudantium exercitationem eius assumenda voluptates
-      repellat harum quibusdam sunt facere inventore.
-    </Paragraph>
-    <Paragraph color="red" size="normal" font={Fonts.BOLD}>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-      Tempora ipsam optio accusamus quo, aliquid ea! Voluptas amet
-      saepe fuga! Laudantium exercitationem eius assumenda voluptates
-      repellat harum quibusdam sunt facere inventore.
-    </Paragraph>
-    <Paragraph color="red" size="normal" font={Fonts.EXTRA_BOLD}>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-      Tempora ipsam optio accusamus quo, aliquid ea! Voluptas amet
-      saepe fuga! Laudantium exercitationem eius assumenda voluptates
-      repellat harum quibusdam sunt facere inventore.
-    </Paragraph>
-    <Paragraph color="black" size="big" font={Fonts.BLACK}>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-      Tempora ipsam optio accusamus quo, aliquid ea! Voluptas amet
-      saepe fuga! Laudantium exercitationem eius assumenda voluptates
-      repellat harum quibusdam sunt facere inventore.
-    </Paragraph>
-    <ButtonComponent text="ENTREGAR TAREAS" size="normal" onPress={HandleButton} color="red" />
-    <ButtonComponent text="ENTREGAR TAREAS" size="normal" onPress={HandleButton} color="blue" ghost />
-    <ButtonComponent text="ENTREGAR TAREAS" size="small" onPress={HandleButton} color="red" />
-    <ButtonComponent text="ENTREGAR TAREAS" size="small" onPress={HandleButton} color="blue" opacity />
-    <View style={{ width: 400, height: 200 }}>
-      <Image resizeContain source="https://pbs.twimg.com/media/E4gSE7eXMAIF2TK.png" />
-    </View>
-    <View style={{ width: 400, height: 200 }}>
-      <Image source="https://pbs.twimg.com/media/E4gSE7eXMAIF2TK.png" />
-    </View>
-  </View>
+  <ScrollView>
+    <HorizontalLimitator>
+      <Text color={TColor.BLUE} weight={Fonts.REGULAR}>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora ipsam
+        optio accusamus quo, aliquid ea! Voluptas amet saepe fuga! Laudantium
+        exercitationem eius assumenda voluptates repellat harum quibusdam sunt
+        facere inventore.
+      </Text>
+      <Text color={TColor.RED} weight={Fonts.BOLD}>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora ipsam
+        optio accusamus quo, aliquid ea! Voluptas amet saepe fuga! Laudantium
+        exercitationem eius assumenda voluptates repellat harum quibusdam sunt
+        facere inventore.
+      </Text>
+      <Button text="ENTREGAR TAREAS" color={BColor.RED} />
+      <Button text="ENTREGAR TAREAS" ghost />
+      <Button text="ENTREGAR TAREAS" color={BColor.BLUE} />
+      <Button text="ENTREGAR TAREAS" disabled />
+      <View style={{ width: '100%', height: 200 }}>
+        <Image source="https://pbs.twimg.com/media/E4gSE7eXMAIF2TK.png" />
+      </View>
+    </HorizontalLimitator>
+  </ScrollView>
 );
 
 export default ScreenTest;
