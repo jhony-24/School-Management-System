@@ -1,10 +1,14 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import * as S from './styles';
+
+import { ActivityIndicator } from 'react-native';
+
+import { Colors } from '../../../styles/colors';
 
 const SourceLoading = () => (
-  <View>
-    <Text>Loading Resources...</Text>
-  </View>
+  <S.Container>
+    <ActivityIndicator size="large" color={Colors.BLUE} />
+  </S.Container>
 );
 
 export default SourceLoading;

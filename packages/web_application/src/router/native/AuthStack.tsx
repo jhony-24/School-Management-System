@@ -18,7 +18,11 @@ import DrawerMenu from '../../components/templates/DrawerMenu';
 const Drawer = createDrawerNavigator();
 
 const RouterApplication = () => (
-  <Drawer.Navigator initialRouteName="Test" drawerContent={DrawerMenu}>
+  <Drawer.Navigator
+    initialRouteName="Test"
+    drawerContent={DrawerMenu}
+    sceneContainerStyle={{ backgroundColor: '#fff' }}
+  >
     <Drawer.Screen name="Home" component={Home} />
     <Drawer.Screen name="Calendar" component={Calendar} />
     <Drawer.Screen name="File-Preview" component={FilePreview} />

@@ -10,7 +10,6 @@ interface TextPropsType {
 }
 
 const Text = styled.Text<TextPropsType>`
-  width: 100%;
   color: ${({ color }) => color};
   font-family: ${({ weight }) => weight};
   font-size: ${({ size }) => size! + 'px'};
