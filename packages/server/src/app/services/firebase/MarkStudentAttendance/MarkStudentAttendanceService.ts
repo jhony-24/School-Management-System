@@ -15,7 +15,8 @@ export default class MarkStudentAttendanceService
     const { studentId, classroomId, date, reason } = payload;
     const classroomRepository = getRepository(ClassroomCalendar);
 
-    const response = await classroomRepository.runTransaction(async (transaction) => {
+    const response = await classroomRepository.runTransaction(
+      async (transaction) => {
         try {
           const classroomCalendar = await transaction
             .whereEqualTo('classroomId', classroomId)
@@ -23,10 +24,19 @@ export default class MarkStudentAttendanceService
           if (!classroomCalendar) {
             throw new Error('Clase no encontrada');
           }
-          const getCurrentAssistance = new GetCurrentAssistanceByDate(classroomCalendar,date);
-          const studentFromAssistance = new StudentFromAssistance(getCurrentAssistance,studentId);
-          const studentAttendance = new StudentAttendance(getCurrentAssistance,studentFromAssistance);
-          const { index } =  getCurrentAssistance.getAssistance();
+          const getCurrentAssistance = new GetCurrentAssistanceByDate(
+            classroomCalendar,
+            date
+          );
+          const studentFromAssistance = new StudentFromAssistance(
+            getCurrentAssistance,
+            studentId
+          );
+          const studentAttendance = new StudentAttendance(
+            getCurrentAssistance,
+            studentFromAssistance
+          );
+          const { index } = getCurrentAssistance.getAssistance();
           const exists = studentFromAssistance.getStudent();
 
           if (exists) {

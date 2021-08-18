@@ -1,14 +1,12 @@
 {
   "name": "system",
-  "version": "independent",
+  "version": "1.0.0",
   "private": true,
   "workspaces": {
     "packages": [
       "packages/**"
-    ],
-    "nohoist": ["**"]
+    ]
   },
-  "main": "index.js",
   "repository": "https://github.com/BiloCode/School-Management-System.git",
   "author": "BiloCode <billy_paredes_aycho@hotmail.com>",
   "license": "MIT",
@@ -28,14 +26,11 @@
     "prettier": "^2.3.2"
   },
   "scripts": {
-    "dev:client": "lerna exec --scope @system/client -- yarn dev",
-    "dev:design-system": "lerna exec --scope @system/design-system -- yarn dev",
+    "dev:app" : "lerna exec --scope @system/web_application -- yarn start",
+    "test:app" : "lerna exec --scope @system/web_application -- yarn jest",
     "dev:server": "lerna exec --scope @system/server -- yarn dev",
-    "test:client": "lerna exec --scope @system/design-system -- yarn test",
     "test:server": "lerna exec --scope @system/server -- yarn test:watch",
-    "build:client": "lerna exec --scope @system/client -- yarn build",
     "build:server": "lerna exec --scope @system/server -- yarn build",
-    "build:design-system": "lerna exec --scope @system/design-system -- yarn build",
     "postinstall": "husky install",
     "lint": "eslint packages/**",
     "lint:fix": "eslint packages/** --fix"

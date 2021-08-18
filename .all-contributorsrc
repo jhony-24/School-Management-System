@@ -1,0 +1,60 @@
+{
+  "projectName": "school-management-system",
+  "projectOwner": "BiloCode",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "BiloCode",
+      "name": "Billy Alexander Paredes Aycho",
+      "avatar_url": "https://avatars.githubusercontent.com/u/73754175?v=4",
+      "profile": "https://github.com/BiloCode",
+      "contributions": [
+        "code",
+        "design",
+        "test"
+      ]
+    },
+    {
+      "login": "jhony-24",
+      "name": "Jhony Vega",
+      "avatar_url": "https://avatars.githubusercontent.com/u/55319455?v=4",
+      "profile": "https://jhonyvega.com/",
+      "contributions": [
+        "code",
+        "doc",
+        "infra",
+        "test"
+      ]
+    },
+    {
+      "login": "josedaesbar",
+      "name": "josedaesbar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67618319?v=4",
+      "profile": "https://github.com/josedaesbar",
+      "contributions": [
+        "code",
+        "test",
+        "ideas"
+      ]
+    },
+    {
+      "login": "kkujakku",
+      "name": "Mayo Dev",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61170878?v=4",
+      "profile": "https://github.com/kkujakku",
+      "contributions": [
+        "code",
+        "test",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}

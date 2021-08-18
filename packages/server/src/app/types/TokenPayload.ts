@@ -1,6 +1,6 @@
 import { UserType } from '@system/types';
 
 export type TokenPayload = {
-  userId: string;
-  userType: UserType;
+  user_id: string;
+  user_type: UserType;
 };

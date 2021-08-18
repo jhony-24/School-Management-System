@@ -1,4 +1,3 @@
-import 'module-alias/register';
 import 'reflect-metadata';
 
 import { json, urlencoded, Express } from 'express';

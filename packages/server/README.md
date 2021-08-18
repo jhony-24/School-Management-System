@@ -17,14 +17,15 @@ To use firebase you need to create a **firestore_secret_key.json** file
 
 ```
 /src
-  /keys
-    firestore_secret_key.json
+  /config
+    /private
+      firestore_secret_key.json
 ```
 
 [https://console.firebase.google.com/u/0/](https://console.firebase.google.com/u/0/)
 
 ### Code Rules
 
-- Camel Case -> Class
-- Lower Case -> Functions
-- Snake Case -> Variables
+- Pascal Case -> Class , Types , Interfaces
+- Camel Case -> Functions
+- Snake Case -> Variables , objetos , object properties
