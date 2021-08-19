@@ -17,7 +17,7 @@ const ScreenTest = () => (
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora ipsam
         optio accusamus quo, aliquid ea! Voluptas amet saepe fuga! Laudantium
         exercitationem eius assumenda voluptates repellat harum quibusdam sunt
-        facere inventore.
+        facere inventores.
       </Text>
       <Text color={TColor.RED} weight={Fonts.BOLD}>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora ipsam
