@@ -5,31 +5,30 @@ import { View } from 'react-native';
 import Text from '../../atoms/Text';
 import { TColor, TSize } from '../../../styles/text';
 import { Fonts } from '../../../styles/font';
+import Icon from '../../atoms/Icon';
 
-interface HomeItemPropsType extends S.HomeItemStylePropsType {
-  iconSource: any;
+interface HomeItemPropsType extends S.ContainerProps {
+  icon: any;
   text: string;
   onPress?(): void;
 }
 
 const HomeItem: React.FC<HomeItemPropsType> = ({
-  iconSource,
+  icon,
   text,
   onPress,
   color,
 }) => (
-  <View>
+  <S.Container>
     <S.HomeItemButtonContainer color={color} onTouchEnd={onPress}>
-      <S.IconContainer>
-        <S.Icon source={iconSource} />
-      </S.IconContainer>
+      <Icon icon={icon} />
     </S.HomeItemButtonContainer>
     <S.TextContainer>
       <Text size={TSize.SMALL} color={TColor.BLACK} weight={Fonts.BOLD}>
         {text}
       </Text>
     </S.TextContainer>
-  </View>
+  </S.Container>
 );
 
 export default HomeItem;

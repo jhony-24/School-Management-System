@@ -1,16 +1,19 @@
 import React, { FC } from 'react';
-import PerfilPictureStyle from './style';
-import Image from '../../atoms/Image';
+import S from './style';
+
+import CircularImage from '../CircularImage';
 
 interface PerfilPicturePropsType {
-  source : string;
+  source: string;
 }
 
-export const PerfilPicture : FC<PerfilPicturePropsType> = ({ source }) => (
-  <PerfilPictureStyle.Content>
-    <PerfilPictureStyle.Background />
-    <PerfilPictureStyle.ContentImage>
-      <Image source={source} />
-    </PerfilPictureStyle.ContentImage>
-  </PerfilPictureStyle.Content>
+const PerfilPicture: FC<PerfilPicturePropsType> = ({ source }) => (
+  <S.Content>
+    <S.Background />
+    <S.ContentImage>
+      <CircularImage source={source} />
+    </S.ContentImage>
+  </S.Content>
 );
+
+export default PerfilPicture;

@@ -1,32 +1,32 @@
-import { Controller } from '@localtypes/Controller';
-import GetClassroomPublications from '@services/firebase/GetClassroomPublications';
-import FormatStudentHomeworks from '@services/FormatStudentHomeworks';
-import GetPublicationsFormated from '@services/GetPublicationsFormated';
-import GetHomeworkStudent from '@services/mysql/GetHomeworkStudent';
 import { Request, Response } from 'express';
 
-export default class GetPublicationsHomeworkController implements Controller {
+import { Controller } from '@localtypes/Controller';
+
+import GetHomeworkStudent from '@services/mysql/GetHomeworkStudent';
+import FormatStudentHomeworks from '@services/FormatStudentHomeworks';
+import GetPublicationsFormated from '@services/GetPublicationsFormated';
+import GetClassroomPublications from '@services/firebase/GetClassroomPublications';
+
+export class GetStudentClassroomData implements Controller {
   async start(request: Request, response: Response) {
-    const { userId, userType } = request.body;
+    const { userId } = request.body;
 
     try {
-      const getPublicationsHomework = new GetPublicationsFormated(
+      const getPublications = new GetPublicationsFormated(
         new GetHomeworkStudent(),
         new GetClassroomPublications(),
         new FormatStudentHomeworks()
       );
 
-      const publicationsFormated = await getPublicationsHomework.getData(
-        userId
-      );
+      const publications = await getPublications.getData(userId);
 
-      if (!publicationsFormated) {
+      if (!publications) {
         return response
           .status(200)
           .json({ message: 'No existe hay resultados' });
       }
 
-      return response.status(200).json(publicationsFormated);
+      return response.status(200).json(publications);
     } catch (e) {
       return response.status(404).json({
         error: e.message,

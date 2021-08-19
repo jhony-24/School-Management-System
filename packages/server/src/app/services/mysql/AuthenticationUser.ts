@@ -3,12 +3,9 @@ import { User } from '@models/mysql/User';
 import { IComparePassword } from '@localtypes/ComparePassword';
 
 class AuthenticationUser {
-  constructor(private comparePassword : IComparePassword) {}
+  constructor(private comparePassword: IComparePassword) {}
 
-  async authentication(
-    dni: string,
-    password: string,
-  ) {
+  async verify(dni: string, password: string) {
     const userRepository = getRepository(User);
     const userResponse = await userRepository.findOne({
       select: ['id', 'password'],
@@ -16,7 +13,10 @@ class AuthenticationUser {
     });
     if (userResponse !== undefined) {
       const user = userResponse as User;
-      const isPasswordCorrect = await this.comparePassword.compare(password, user.password);
+      const isPasswordCorrect = await this.comparePassword.compare(
+        password,
+        user.password
+      );
       if (isPasswordCorrect) return user.id;
     }
     return null;

@@ -1,11 +1,10 @@
 import * as React from 'react';
 import * as S from './styles';
 
-import { Image, ImageProps, View } from 'react-native';
 import Text from '../../atoms/Text';
-import { TColor, TSize } from '../../../styles/text';
+
+import { TSize } from '../../../styles/text';
 import { Fonts } from '../../../styles/font';
-import { useState } from 'react';
 
 interface NavbaritemPropsType extends S.NavbarItemStyleProps {
   iconSource: any;
@@ -22,7 +21,7 @@ const Navbaritem: React.FC<NavbaritemPropsType> = ({
   color,
   active,
 }) => {
-  const [isHover, setIsHover] = useState<boolean>();
+  const [isHover, setIsHover] = React.useState<boolean>();
 
   const onTouchStart = () => setIsHover(true);
 

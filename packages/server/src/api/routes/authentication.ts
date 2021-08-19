@@ -2,11 +2,15 @@ import { Router } from 'express';
 import { AuthenticationUserMiddleware } from '@middlewares/AuthenticationMiddleware';
 import { TokenIsValidMiddleware } from '@middlewares/TokenIsValidMiddleware';
 import { AdapterController } from '@utils/AdapterController';
-import { GetUserController } from '@controllers/auth/GetUserController';
+import { GetUserData } from '@controllers/auth/GetUserData';
 
 const app = Router();
 
-app.get('/recovery-session', TokenIsValidMiddleware, AdapterController(GetUserController));
-app.post('/', AuthenticationUserMiddleware, AdapterController(GetUserController));
+app.post('/', AuthenticationUserMiddleware, AdapterController(GetUserData));
+app.get(
+  '/recovery-session',
+  TokenIsValidMiddleware,
+  AdapterController(GetUserData)
+);
 
 export default app;

@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Image } from 'react-native';
 import * as S from './styles';
+
+import Icon from '../../atoms/Icon';
+import { IconType } from '../../../styles/icons';
 
 interface CarruselImagesPropsType {
   images: string[];
@@ -9,29 +11,20 @@ interface CarruselImagesPropsType {
 const CarruselImages: React.FC<CarruselImagesPropsType> = ({ images }) => {
   const [actualIndex, setActualIndex] = React.useState<number>(0);
 
-  const onTouchNext = () => {
-    setActualIndex(actualIndex + 1);
-  };
-
-  const onTouchPrev = () => {
-    setActualIndex(actualIndex - 1);
-  };
+  const onTouchNext = () => setActualIndex(() => actualIndex + 1);
+  const onTouchPrev = () => setActualIndex(() => actualIndex - 1);
 
   return (
     <S.ImageContainer>
       <S.ImageCarrusel source={{ uri: images[actualIndex] }} />
       {images.length - 1 !== actualIndex && (
         <S.ArrowNextContainer onTouchEnd={onTouchNext}>
-          <S.ArrowSize
-            source={require('../../../assets/icons/arrow_right.png')}
-          />
+          <Icon icon={IconType.ARROW_RIGHT} />
         </S.ArrowNextContainer>
       )}
       {actualIndex !== 0 && (
         <S.ArrowPrevContainer onTouchEnd={onTouchPrev}>
-          <S.ArrowSize
-            source={require('../../../assets/icons/arrow_left.png')}
-          />
+          <Icon icon={IconType.ARROW_LEFT} />
         </S.ArrowPrevContainer>
       )}
     </S.ImageContainer>

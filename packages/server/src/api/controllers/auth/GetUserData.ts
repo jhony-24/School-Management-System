@@ -4,15 +4,16 @@ import { Request, Response } from 'express';
 import { UserType } from '@system/types';
 
 type RequestControllerType = {
-  user_id : string,
-  user_type : UserType,
-  token_generated : string,
-}
+  user_id: string;
+  user_type: UserType;
+  token_generated: string;
+};
 
-export class GetUserController implements Controller {
-  async start(req:Request, res:Response) {
+export class GetUserData implements Controller {
+  async start(req: Request, res: Response) {
     try {
-      const { user_id, user_type, token_generated } = req.body as RequestControllerType;
+      const { user_id, user_type, token_generated } =
+        req.body as RequestControllerType;
       const user_repository = GetUserByType[user_type];
       const user_data = await user_repository.getData(user_id);
       if (!user_data) {

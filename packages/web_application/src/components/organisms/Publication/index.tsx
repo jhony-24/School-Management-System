@@ -9,7 +9,7 @@ import Button from '../../atoms/Button';
 import { BColor, BSize } from '../../../styles/button';
 import ImageAtom from '../../atoms/Image';
 import { useState } from 'react';
-import CarruselImages from '../../molecules/CarruselImages';
+import CarrouselImages from '../../molecules/CarrouselImages';
 
 type PublicationType = 'homework' | 'announcement';
 
@@ -41,17 +41,17 @@ const Publication: React.FC<PublicationPropsType> = ({
 
       {images && (
         <S.CarruselContainer>
-          <CarruselImages images={images} />
+          <CarrouselImages images={images} />
         </S.CarruselContainer>
       )}
 
       {type === 'homework' && (
         <S.ButtonContainer>
           <Button
-            onPress={onPress}
             text="Ver detalles"
             color={BColor.BLUE}
             size={BSize.SMALL}
+            onPress={onPress}
           />
         </S.ButtonContainer>
       )}
