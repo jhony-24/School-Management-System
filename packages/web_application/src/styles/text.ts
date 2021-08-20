@@ -5,6 +5,7 @@ export enum TColor {
   RED = Colors.RED,
   BLACK = Colors.BLACK,
   WHITE = Colors.WHITE,
+  GREEN = Colors.GREEN,
   GRAY = Colors.GRAY,
 }
 

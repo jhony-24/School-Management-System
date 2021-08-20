@@ -1,14 +1,13 @@
 import GetCurrentAssistanceByDate from './GetCurrentAssistanceByDate';
-import StudentId from './StudentId';
 
 export default class StudentFromAssistance {
   constructor(
     private readonly assistance: GetCurrentAssistanceByDate,
-    private readonly studentId: StudentId
+    private readonly studentId: string
   ) {}
   getStudent() {
     return (this.assistance.getAssistance().assistance.students || []).find(
-      (currentStudent) => currentStudent.studentId === this.studentId.getId()
+      (currentStudent) => currentStudent.studentId === this.studentId
     );
   }
 }

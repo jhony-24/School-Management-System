@@ -1,18 +1,16 @@
 import { IClassroomCalendar } from '@system/types';
-import AssistanceDate from './AssistanceDate';
 
 export default class GetCurrentAssistanceByDate {
   private assistanceIndex!: number;
   constructor(
     private readonly classroomCalendar: IClassroomCalendar,
-    private readonly assistanceDate: AssistanceDate
+    private readonly date: string
   ) {}
 
   private getCurrentIndexAssistanceByDate() {
-    const searchedDate = this.assistanceDate.getDate();
     this.assistanceIndex = this.classroomCalendar.assistance.findIndex(
       (currentAssistance) => {
-        return currentAssistance.createdAt === searchedDate;
+        return currentAssistance.createdAt === this.date;
       }
     );
     return this.assistanceIndex;

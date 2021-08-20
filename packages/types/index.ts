@@ -62,5 +62,5 @@ export {
   IPublications,
   IFileSection,
   IClassroomCalendar,
-  ISystemStorage
+  ISystemStorage,
 };
