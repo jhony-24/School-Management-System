@@ -9,3 +9,13 @@ export const Container = styled.View`
   background-color: ${Colors.WHITE};
   border-radius: 10px;
 `;
+
+export const ImageStatus = styled.View`
+  align-items: center;
+`;
+
+export const Detail = styled.View`
+  align-items: center;
+  margin-bottom: 16px;
+  margin-top: 16px;
+`;

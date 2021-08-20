@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Text, View } from 'react-native';
-import HomeworkFileItem from '../../components/molecules/HomeworkFileItem';
+import MarkState from '../../components/molecules/MarkState';
+import { MarkStateOptions } from '../../styles/markState';
 
 const Home = () => (
   <View>
     <Text>Hola que tal jhony</Text>
-    <HomeworkFileItem
-      file="https://cdn.pixabay.com/photo/2021/08/08/15/45/mountains-6531264_960_720.jpg"
-      course="Tarea de matematica"
-      preview
-    />
+    <MarkState state={MarkStateOptions.BAD} />
+    <MarkState state={MarkStateOptions.LOCK} />
+    <MarkState state={MarkStateOptions.LOADING} />
+    <MarkState state={MarkStateOptions.Ok} />
   </View>
 );
 

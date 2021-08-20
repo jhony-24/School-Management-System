@@ -15,12 +15,14 @@ type TProps = {
 
 const HomeworkFileItem = ({ course, file, preview }: TProps) => {
   const extension = getFileExtension(file);
-  const getImageByExtension = fileImages[extension];
+  const fileImage = fileImages[extension];
 
   return (
     <S.Container>
       <View>
-        <Text>{getImageByExtension}</Text>
+        <Text>
+          <Image source={resourceImages[fileImage]} />
+        </Text>
       </View>
       <S.DetailCourse>
         <Text>{course}</Text>
@@ -41,9 +43,13 @@ HomeworkFileItem.defaultProps = {
   preview: false,
 };
 
+const resourceImages = {
+  pdf: require('../../../assets/icons/file-pdf.png'),
+  jpg: require('../../../assets/icons/file-pdf.png'),
+};
+
 const fileImages: Record<string, string> = {
   pdf: 'pdf',
-  doc: 'doc',
   jpg: 'jpg',
 };
 
