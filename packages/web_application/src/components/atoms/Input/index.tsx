@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Colors } from '../../../styles/colors';
-import InputStyles from './styles';
+import InputStyles from './style';
 
 export interface InputPropsType {
   placeholder?: string;
