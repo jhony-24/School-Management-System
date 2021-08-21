@@ -1,17 +1,22 @@
 import * as React from 'react';
 import * as S from './style';
 
+import Text from '../../atoms/Text';
 import Icon, { IconPropsType } from '../../atoms/Icon';
 import Input, { InputPropsType } from '../../atoms/Input';
-import Text from '../../atoms/Text';
+
 import { TColor, TSize } from '../../../styles/text';
 import { Fonts } from '../../../styles/font';
 
-interface FormControlPropsType extends IconPropsType , InputPropsType {
-  labelText : string;
-};
+interface FormControlPropsType extends IconPropsType, InputPropsType {
+  labelText: string;
+}
 
-const FormControl: React.FC<FormControlPropsType> = ({ icon, type , labelText }) => {
+const FormControl: React.FC<FormControlPropsType> = ({
+  icon,
+  type,
+  labelText,
+}) => {
   return (
     <S.Container>
       <S.ContainerText>

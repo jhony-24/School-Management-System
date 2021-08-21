@@ -3,9 +3,9 @@ import { View } from 'react-native';
 import * as S from './styles';
 import Text from '../../atoms/Text';
 import { TColor, TSize } from '../../../styles/text';
-import { Image } from 'react-native';
 
-const ChevronRight = require('../../../assets/icons/chevron-right.png');
+import Icon from '../../atoms/Icon';
+import { IconType } from '../../../styles/icons';
 
 type TProps = {
   course: string;
@@ -20,9 +20,7 @@ const HomeworkFileItem = ({ course, file, preview }: TProps) => {
   return (
     <S.Container>
       <View>
-        <Text>
-          <Image source={resourceImages[fileImage]} />
-        </Text>
+        <Text>{/* <Icon /> */}</Text>
       </View>
       <S.DetailCourse>
         <Text>{course}</Text>
@@ -30,11 +28,7 @@ const HomeworkFileItem = ({ course, file, preview }: TProps) => {
           Archivo {extension}
         </Text>
       </S.DetailCourse>
-      {preview && (
-        <View>
-          <Image source={ChevronRight} />
-        </View>
-      )}
+      {preview && <Icon icon={IconType.ARROW_RIGHT_BLACK} />}
     </S.Container>
   );
 };

@@ -1,27 +1,21 @@
 import * as React from 'react';
-import { View, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
+import HomeworkFileItem from '../../components/molecules/HomeworkFileItem';
+import HomeworkItem from '../../components/molecules/HomeworkItem';
 
-import Text from '../../components/atoms/Text';
-import Image from '../../components/atoms/Image';
-import Button from '../../components/atoms/Button';
-import HorizontalLimitator from '../../components/atoms/HorizontalLimitator';
-
-import { Fonts } from '../../styles/font';
-import { TColor } from '../../styles/text';
-import { BColor } from '../../styles/button';
-
-import FormControl from '../../components/molecules/FormControl';
-import { IconType } from '../../styles/icons';
+import MarkState from '../../components/molecules/MarkState';
+import { HomeworkState } from '../../styles/homework';
+import { MarkStateOptions } from '../../styles/mark_state';
 
 const ScreenTest = () => (
-  <ScrollView style={{backgroundColor:'black'}}>
-    <FormControl 
-      icon={IconType.ID_CARD} 
-      labelText="Documento nacional de identidad (DNI)" />
-    <FormControl 
-      icon={IconType.ID_CARD} 
-      labelText="Contraseña" 
-      type="password" />
+  <ScrollView style={{ flex: 1 }}>
+    <MarkState state={MarkStateOptions.LOADING} />
+    <HomeworkItem
+      state={HomeworkState.ok}
+      course="Curso de Matematica"
+      date="2019-20-19"
+    />
+    <HomeworkFileItem course="hola" file="pdf" preview />
   </ScrollView>
 );
 

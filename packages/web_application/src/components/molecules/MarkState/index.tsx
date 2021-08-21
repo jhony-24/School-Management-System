@@ -1,13 +1,15 @@
 import * as React from 'react';
-import { View } from 'react-native';
-import { BSize } from '../../../styles/button';
-import { Fonts } from '../../../styles/font';
-import { MarkStateOptions } from '../../../styles/markState';
-import { TColor } from '../../../styles/text';
-import Button from '../../atoms/Button';
-import Image from '../../atoms/Image';
-import Text from '../../atoms/Text';
 import * as S from './styles';
+
+import { ActivityIndicator, Image } from 'react-native';
+
+import { Fonts } from '../../../styles/font';
+import { TColor, TSize } from '../../../styles/text';
+import { BSize } from '../../../styles/button';
+import { MarkStateOptions } from '../../../styles/mark_state';
+
+import Text from '../../atoms/Text';
+import Button from '../../atoms/Button';
 
 type MarkStatusWithoutLoading = Exclude<
   MarkStateOptions,
@@ -17,33 +19,38 @@ type MarkStatusWithoutLoading = Exclude<
 type TProps = {
   state?: MarkStateOptions;
   datetime?: string;
+  onButtonPress?(): void;
 };
 
-const MarkState = ({ state, datetime }: TProps) => {
+const MarkState = ({ state, datetime, onButtonPress }: TProps) => {
   const normalizeState = state || MarkStateOptions.Ok;
   const normalizeTitleColor = titleColor[state || MarkStateOptions.Ok];
 
   return (
     <S.Container>
-      <View>
-        <S.ImageStatus>
-          <Image source={imageStatus[state as MarkStatusWithoutLoading]} />
-        </S.ImageStatus>
-        <S.Detail>
-          <Text weight={Fonts.BOLD} color={normalizeTitleColor}>
-            {titleText[normalizeState]}
-          </Text>
-          <Text>
-            {subtitleText[normalizeState].replace(
-              '{{datetime}}',
-              datetime || ''
-            )}
-          </Text>
-        </S.Detail>
-        {state !== MarkStateOptions.LOADING && (
-          <Button text={buttonText[normalizeState]} size={BSize.SMALL} />
+      <S.ImageStatus>
+        {state === MarkStateOptions.LOADING ? (
+          <ActivityIndicator size={40} color={String(TColor.BLUE)} />
+        ) : (
+          <Image source={imageStatus[state!]} />
         )}
-      </View>
+      </S.ImageStatus>
+      <S.Detail>
+        <Text weight={Fonts.BOLD} color={normalizeTitleColor}>
+          {titleText[normalizeState]}
+        </Text>
+        <Text size={TSize.SMALL}>
+          {subtitleText[normalizeState].replace('{{datetime}}', datetime || '')}
+        </Text>
+      </S.Detail>
+      {state !== MarkStateOptions.LOADING && (
+        <Button
+          size={BSize.SMALL}
+          onPress={onButtonPress}
+          text={buttonText[normalizeState]}
+          disabled={state === MarkStateOptions.LOCK}
+        />
+      )}
     </S.Container>
   );
 };

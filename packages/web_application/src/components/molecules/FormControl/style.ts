@@ -4,16 +4,15 @@ import { Colors } from '../../../styles/colors';
 const separation_size = '10px';
 
 export const Container = styled.View`
-  width:300px;
-  display:flex;
-  flex-flow:column nowrap;
-  margin:10px;
-`
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+`;
 
 export const ContainerText = styled.View`
-  width:100%;
-  margin-bottom:${separation_size};
-`
+  width: 100%;
+  margin-bottom: ${separation_size};
+`;
 
 export const ContainerInputForm = styled.View`
   width: 100%;
@@ -32,6 +31,7 @@ export const ContainerIcon = styled.View`
   justify-content: center;
   align-items: center;
 `;
+
 export const ContainerInput = styled.View`
   width: 250px;
   height: 100%;

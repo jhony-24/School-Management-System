@@ -1,6 +1,7 @@
 export enum IconType {
   ARROW_LEFT = require('../assets/icons/arrow_left.png'),
   ARROW_RIGHT = require('../assets/icons/arrow_right.png'),
+  ARROW_RIGHT_BLACK = require('../assets/icons/arrow_right_black.png'),
   BARS = require('../assets/icons/bars.png'),
   CAMERA = require('../assets/icons/camera.png'),
   HOME = require('../assets/icons/home.png'),
