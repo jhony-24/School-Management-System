@@ -1,1 +1,1 @@
-export const PADDING_SCREEN = 32;
+export const PADDING_SCREEN = 30;

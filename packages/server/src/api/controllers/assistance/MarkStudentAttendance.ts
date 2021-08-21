@@ -3,7 +3,7 @@ import { Controller } from '@localtypes/Controller';
 import MarkStudentAttendanceService from '@services/firebase/MarkStudentAttendance/MarkStudentAttendanceService';
 import { Request, Response } from 'express';
 
-export default class MarkStudentAttendanceController implements Controller {
+export class MarkStudentAttendance implements Controller {
   async start(req: Request, res: Response) {
     const body: MarkStudentAttendancePayload = req.body;
     const service = new MarkStudentAttendanceService();

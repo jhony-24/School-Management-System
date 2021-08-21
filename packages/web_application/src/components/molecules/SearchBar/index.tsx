@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as S from './styles';
-import { Image } from 'react-native';
 
-import { Colors } from '../../../styles/colors';
+import Icon from '../../atoms/Icon';
+import Input from '../../atoms/Input';
 
-const SearchIcon = require('../../../assets/icons/search.png');
+import { IconType } from '../../../styles/icons';
 
 type TProps = {
   onChangeText?(text: string): void;
@@ -13,13 +13,9 @@ type TProps = {
 const SearchBar = ({ onChangeText }: TProps) => (
   <S.Container>
     <S.Icon>
-      <Image source={SearchIcon} />
+      <Icon icon={IconType.SEARCH} />
     </S.Icon>
-    <S.Input
-      placeholder="Busca por nombre..."
-      onChangeText={onChangeText}
-      placeholderTextColor={Colors.GRAY}
-    />
+    <Input placeholder="Busca por nombre..." onChangeText={onChangeText} />
   </S.Container>
 );
 

@@ -1,9 +1,10 @@
-import GetPublicationsHomeworkController from '@controllers/Publications/GetPublicationsHomeworkController';
-import { AdapterController } from '@utils/AdapterController';
 import { Router } from 'express';
+import { AdapterController } from '@utils/AdapterController';
+
+import { GetStudentClassroomData } from '@controllers/publications/GetStudentClassroomData';
 
 const app = Router();
 
-app.get('/', AdapterController(GetPublicationsHomeworkController));
+app.get('/', AdapterController(GetStudentClassroomData));
 
 export default app;

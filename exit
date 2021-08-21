@@ -1,0 +1,496 @@
+[33mcommit 8a372eeeb130d1cdd4247d2f89a1eb6b0105d0a8[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: 81dd3a3 2f4fc7e
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Thu Aug 12 18:24:10 2021 -0500
+
+    Merge branch 'main' of https://github.com/BiloCode/School-Management-System
+
+[33mcommit 81dd3a3ef7b00caca53af3d59fe02c3a405d8537[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Thu Aug 12 18:08:36 2021 -0500
+
+    feat(web_application): add a button component atom
+
+[33mcommit 2f4fc7e4038e205c3b6923fd6e9285c490f1f59d[m[33m ([m[1;31mdev-mayo/main[m[33m)[m
+Merge: 0e1a7ca bc7ff08
+Author: Billy Alexander Paredes Aycho <73754175+BiloCode@users.noreply.github.com>
+Date:   Thu Aug 12 17:26:17 2021 -0500
+
+    fix(web_application): font load fix
+
+[33mcommit bc7ff08fea002211469ddb7cc2a111eb519efa8e[m
+Author: BiloCode <billy_paredes_aycho@hotmail.com>
+Date:   Thu Aug 12 17:23:35 2021 -0500
+
+    fix(web_application): font load fix
+
+[33mcommit 0e1a7ca36c95c8c8e34a968c54d031262ebf28ef[m
+Merge: 8de4260 9a7b24e
+Author: Billy Alexander Paredes Aycho <73754175+BiloCode@users.noreply.github.com>
+Date:   Thu Aug 12 16:52:18 2021 -0500
+
+    chore(web_application): fonts and router configuration
+    
+    - add router screens
+    - font raleway configurated
+    - add drawer custom
+
+[33mcommit 9a7b24e766155b63c4001b3235b288022fffdd20[m
+Author: BiloCode <billy_paredes_aycho@hotmail.com>
+Date:   Thu Aug 12 16:50:17 2021 -0500
+
+    chore(web_application): fonts and router configurated
+    - add router screens
+    - font raleway configurated
+    - add drawer custom
+
+[33mcommit d8f30d85993a834283216bd0fccf66e2a04993f9[m
+Merge: 21a4e56 8de4260
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Tue Aug 10 11:23:18 2021 -0500
+
+    Merge branch 'main' of https://github.com/BiloCode/School-Management-System
+
+[33mcommit 8de4260cf7bf12a643840c9fc87e34f008ac23b3[m
+Merge: 28c4170 8232e25
+Author: Billy Alexander Paredes Aycho <73754175+BiloCode@users.noreply.github.com>
+Date:   Tue Aug 10 10:15:10 2021 -0500
+
+    fix(web_application): fix version in babel core (#29)
+
+[33mcommit 8232e25988a8bcb6fcb530d022b9fe0144e174ee[m
+Author: BiloCode <billy_paredes_aycho@hotmail.com>
+Date:   Tue Aug 10 10:12:36 2021 -0500
+
+    fix(web_application): fix version in babel core
+
+[33mcommit 28c4170ccd59ed58f3bc6ff211478c395cdf1362[m
+Author: jhony-24 <jhonyvegacuya24@gmail.com>
+Date:   Sun Aug 8 19:10:01 2021 -0500
+
+    chore(web_application): remove absolute paths
+
+[33mcommit c8e7a632e1cb89ab64cd15996aa123d67929bb8d[m
+Merge: 07f2702 0cf92eb
+Author: Billy Alexander Paredes Aycho <73754175+BiloCode@users.noreply.github.com>
+Date:   Sat Aug 7 09:34:50 2021 -0500
+
+    chore: add native app using expo
+
+[33mcommit 0cf92eb4ddabc60627ae42d98664c4a774713b02[m
+Author: BiloCode <billy_paredes_aycho@hotmail.com>
+Date:   Fri Aug 6 14:27:17 2021 -0500
+
+    chore: add native app using expo
+
+[33mcommit 07f27025560c3305efc73fd486cf3a7cd5c3f359[m
+Author: Mayo Dev <61170878+kkujakku@users.noreply.github.com>
+Date:   Thu Aug 5 08:49:33 2021 -0500
+
+    Applied Observations (#27)
+    
+    * refactor(server):change token service valid format
+    
+    * feat(server):add driver for authentication
+    
+    * perf(server):modify token verification
+    
+    * feat(server): add a authentication user services
+    
+    * feat(server): add a new test and routes to get users
+    
+    * feat(server): add a new controllers and middlewares for auth
+    
+    * refactor(server): implements services and middleware
+    
+    * refactor(server): add a new test with supertest
+    
+    * refactor(server): add a test for routes auth
+    
+    * refactor(server): create a single controller for the user
+    
+    * refactor(server): update test and apply corrections
+    
+    * refactor(server): correction of observations
+    
+    * refactor(server): uncomment firebase config
+
+[33mcommit 21a4e56c001879fd8e33dcbb2d3a332d8ef9ba0d[m
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Wed Aug 4 21:58:12 2021 -0500
+
+    refactor(server): uncomment firebase config
+
+[33mcommit 52743e68a404d2121909fd7c874bb9791ead61c4[m
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Wed Aug 4 21:48:58 2021 -0500
+
+    refactor(server): correction of observations
+
+[33mcommit ad2777164eb3e4d1029ccc757a6b20a5ac3b7576[m
+Merge: 309f9c6 b2ecc8f
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Wed Aug 4 21:27:00 2021 -0500
+
+    Merge branch 'main' of https://github.com/BiloCode/School-Management-System
+
+[33mcommit b2ecc8f4110e1b2f16ce829285c5d1a51f8bc3d0[m
+Author: Mayo Dev <61170878+kkujakku@users.noreply.github.com>
+Date:   Wed Aug 4 18:38:15 2021 -0500
+
+    feat(server): authentication and session restore added (#26)
+
+[33mcommit 309f9c64b0ac5aa9e057d8485b2d875d1c73eeed[m
+Merge: 77b1dfa d8568f0
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Wed Aug 4 18:18:04 2021 -0500
+
+    Merge branch 'main' of https://github.com/BiloCode/School-Management-System
+
+[33mcommit 77b1dfab97c4854be96a5a8a453bf5d9a8313cee[m
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Wed Aug 4 18:14:02 2021 -0500
+
+    refactor(server): update test and apply corrections
+
+[33mcommit 4f100dc3ed13c830558503c516d464923c3d720b[m
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Tue Aug 3 14:48:24 2021 -0500
+
+    refactor(server): create a single controller for the user
+
+[33mcommit 86d4b772bbb0f24aa81a3fce364c835b6c3f72d5[m
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Sat Jul 31 14:50:10 2021 -0500
+
+    refactor(server): add a test for routes auth
+
+[33mcommit 74b3ff8e935afe3661fccc6e0cb8354a6830733d[m
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Fri Jul 30 05:30:34 2021 -0500
+
+    refactor(server): add a new test with supertest
+
+[33mcommit ba73474b618df3fd799ba56270be40bc4216af26[m
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Thu Jul 29 15:28:02 2021 -0500
+
+    refactor(server): implements services and middleware
+
+[33mcommit 33a8ec9644ac97b3413ed5639ba0cfbafa5bfcd7[m
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Thu Jul 29 15:24:30 2021 -0500
+
+    feat(server): add a new controllers and middlewares for auth
+
+[33mcommit d8568f0dc8fc71eff71ed8230f9f535cbc475e07[m
+Author: jhony-24 <jhonyvegacuya24@gmail.com>
+Date:   Thu Jul 29 11:03:45 2021 -0500
+
+    docs: update description and projects
+
+[33mcommit cd781b26b7463ef2c53f076e9a7013834295c6e7[m
+Author: jhony-24 <jhonyvegacuya24@gmail.com>
+Date:   Thu Jul 29 10:24:26 2021 -0500
+
+    chore: remove package scripts
+    
+    Remove dev and build scripts of packages:
+    * client
+    * design-system
+
+[33mcommit c8c07ce967b57011fde2a6785c30243c97d7405c[m
+Author: jhony-24 <jhonyvegacuya24@gmail.com>
+Date:   Thu Jul 29 10:22:55 2021 -0500
+
+    docs: update docs folder
+
+[33mcommit a85d5f1d0bee716614854319a168654c22214fa2[m
+Author: jhony-24 <jhonyvegacuya24@gmail.com>
+Date:   Thu Jul 29 10:08:32 2021 -0500
+
+    chore: add pull request template
+
+[33mcommit ef2f57c8bc4ac8904a543397fe43aee453e884bc[m
+Author: jhony-24 <jhonyvegacuya24@gmail.com>
+Date:   Thu Jul 29 09:55:46 2021 -0500
+
+    docs: rename text in main README.md
+
+[33mcommit 0db067589ee6bb9805853bc095d0580371aeea3a[m
+Author: jhony-24 <jhonyvegacuya24@gmail.com>
+Date:   Thu Jul 29 09:53:45 2021 -0500
+
+    refactor: change scopes in commitlint
+
+[33mcommit 3469c5850aa910836e74575778978229ff692cd5[m
+Author: jhony-24 <jhonyvegacuya24@gmail.com>
+Date:   Thu Jul 29 09:52:56 2021 -0500
+
+    chore: delete client and design-system
+
+[33mcommit 68b83bc538225d5f6e4a2c5067e7757afef98c20[m
+Author: jhony-24 <jhonyvegacuya24@gmail.com>
+Date:   Thu Jul 29 09:24:59 2021 -0500
+
+    feat: add application package
+
+[33mcommit 5b8501d61a89377c835ed4bab4a70f9728eeb6eb[m
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Wed Jul 28 00:15:56 2021 -0500
+
+    feat(server): add a new test and routes to get users
+
+[33mcommit 42471fa4d6ba4a43ea890315948e8cbc6df35004[m
+Merge: 68b9c67 bfb3b18
+Author: kkujakku <mayoimanol@gmail.com>
+Date:   Mon Jul 26 12:20:07 2021 -0500
+
+    Merge branch 'main' of https://github.com/BiloCode/School-Management-System
+
+[33mcommit bfb3b18326fd8ba68d862fb26a1b4d613e8f7663[m
+Author: josedaesbar <67618319+josedaesbar@users.noreply.github.com>
+Date:   Sun Jul 25 23:52:17 2021 -0500
+
+    refactor: change classes names and refactor tests (#25)
+    
+    * chore: mySQL add attribute in table StudentTutors and delete attribute in table Student
+    
+    * chore: mySQL add attribute in table StudentTutors and delete attribute in table Student
+    
+    * chore: mySQL edit table StudentTutors and Students
+    
+    * chore: mySQL edit table StudentTutors and Students
+    
+    Add attribute relationship in table StudentTutors and delete attribute tutorId in table Student
+    
+    * feat: add services and controller to format publications and homeworks
+    
+    * feat: add format Publications with Homeworks
+    
+    This commit is for get pullThis commit is for get pull to Bilo branch
+    
+    * feat: add classes and refactor code
+    
+    Modify the method to format data
+    Modify the classes to receive data
+    Refactor your code with dependency injection
+    
+    * feat: added test and deleted obsolete imports
+    
+    Added test from GetPublicationsHomeworkFormated and cleanup of unnecessary imports
+    
+    * refactor: change classes names and refactor tests
+    
+    Refactorice los test, cambie los nombres de las clases y elimine una clase innecesaria
+    
+    Co-authored-by: Jhony Vega <jhonyvegacuya24@gmail.com>
+    Co-authored-by: BiloCode <73754175+BiloCode@users.noreply.github.com>
+
+[33mcommit a54731e742ab83ec66c34ac0f102ece578b3bd78[m
+Merge: d181826 d340314
+Author: Jhony Vega <jhonyvegacuya24@gmail.com>
+Date:   Sat Jul 24 17:12:11 2021 -0500
+
+    Merge pull request #23 from BiloCode/bilo-dev
+    
+    Packages instalation in all folders fixed
+
+[33mcommit d34031437f56a93a90ec38e3ab1dc00a4e7b41c9[m
+Merge: 16e9248 d181826
+Author: Jhony Vega <jhonyvegacuya24@gmail.com>
+Date:   Sat Jul 24 17:11:45 2021 -0500
+
+    Merge branch 'main' into bilo-dev
+
+[33mcommit d181826890ed460a3deb523fd8530a49f5fdd5a5[m
+Author: jhony-24 <jhonyvegacuya24@gmail.com>
+Date:   Sat Jul 24 17:03:51 2021 -0500
+
+    test(server): create http test about mark attendance controller
+
+[33mcommit d23fe266c9528689c3905482639b1dda78561cd6[m
+Author: jhony-24 <jhonyvegacuya24@gmail.com>
+Date:   Sat Jul 24 17:02:23 2021 -0500
+
+    refactor(server): update response in mark attendance service
+
+[33mcommit 16e924875c224ab723679a0d74adf32c0b797b62[m
+Author: BiloCode <billy_paredes_aycho@hotmail.com>
+Date:   Sat Jul 24 16:35:22 2021 -0500
+
+    fix: install packages in all folders fixed
+
+[33mcommit 635df4d18abac4a408f617bd6269ed0a9bca6b87[m
+Author: BiloCode <73754175+BiloCode@users.noreply.github.com>
+Date:   Sat Jul 24 12:31:42 2021 -0500
+
+    chore(server): edit readme
+
+[33mcommit c11a8a1f3544027b09761236392fea4ddd68d66f[m
+Author: BiloCode <73754175+BiloCode@users.noreply.github.com>
+Date:   Sat Jul 24 12:30:45 2021 -0500
+
+    fix(server): firebase initialize error in jest fixed
+
+[33mcommit 3dfae72ca834916b401b17520a64fb880c9531f5[m
+Merge: 0bb0ed7 aa37d49
+Author: BiloCode <billy_paredes_aycho@hotmail.com>
+Date:   Sat Jul 24 12:28:44 2021 -0500
+
+    Merge branch 'bilo-dev' of https://github.com/BiloCode/School-Management-System into bilo-dev
+
+[33mcommit 0bb0ed76c5d72a1145bc317595cbc86b089c82ed[m
+Merge: 0491312 e46aa6d
+Author: BiloCode <billy_paredes_aycho@hotmail.com>
+Date:   Sat Jul 24 12:27:37 2021 -0500
+
+    Merge branch 'main' of https://github.com/BiloCode/School-Management-System into bilo-dev
+
+[33mcommit 049131285d1a4ebb2ff858d5eb27ffdf4d46ac6e[m
+Author: BiloCode <billy_paredes_aycho@hotmail.com>
+Date:   Sat Jul 24 12:21:08 2021 -0500
+
+    fix(server): firebase initialize error in jest fixed
+
+[33mcommit e46aa6dd8a8d5d9f0b16d590489ae5ed3a90dad7[m
+Author: Jhony Vega <jhonyvegacuya24@gmail.com>
+Date:   Sat Jul 24 11:30:27 2021 -0500
+
+    added transactions to mark the assistance (#21)
+    
+    * feat(server): add controller interface
+    
+    * feat(server): add an adapter to read class controllers
+    
+    * feat(server): add example using services and controllers together
+    
+    * fix(server): change symbol dollar in jest config
+    
+    * feat(server): mark student attendance by classrroom id and student id
+    
+    * feat(types): add more classroom types
+    
+    * refactor(server): add transactions in mark student attendance
+    
+    * test(server): validate student attendance features
+    
+    * fix(server): use correctly the prop transaction
+    
+    * refactor(server): update makeAttendance folder service
+    
+    * refactor(server): add independent classes in mark attendance
+
+[33mcommit 68b9c672316d7311a9c6cfd9adddbcd39a370fef[m
+Author: Imanol Mayo <mayoimanol@gmail.com>
+Date:   Thu Jul 22 15:53:04 2021 -0500
+
+    feat(server): add a authentication user services
+
+[33mcommit 0a9c07b663d7b93d4321b6f51dc53794e975c5c0[m
+Author: BiloCode <73754175+BiloCode@users.noreply.github.com>
+Date:   Tue Jul 20 19:57:03 2021 -0500
+
+    fix(server): fix mock data
+
+[33mcommit aa37d49d312a25d6c18ab399ab1b51b4bbc5cef1[m
+Author: BiloCode <73754175+BiloCode@users.noreply.github.com>
+Date:   Tue Jul 20 19:43:11 2021 -0500
+
+    fix: delete development data mock
+
+[33mcommit 50482608dc954587e9aaf7500335726e7103c017[m
+Merge: 3dd7d95 ad1ed73
+Author: BiloCode <billy_paredes_aycho@hotmail.com>
+Date:   Tue Jul 20 19:08:46 2021 -0500
+
+    Merge branch 'main' of https://github.com/BiloCode/School-Management-System into bilo-dev
+
+[33mcommit 3dd7d95058e32d5d63b963c908229a5c04d79119[m
+Author: BiloCode <billy_paredes_aycho@hotmail.com>
+Date:   Tue Jul 20 19:06:14 2021 -0500
+
+    refactor: change all models and its interfaces
+
+[33mcommit ad1ed7309acd0927899b415470f718da1050744a[m
+Author: Jhony Vega <jhonyvegacuya24@gmail.com>
+Date:   Tue Jul 20 10:38:22 2021 -0500
+
+    docs: update main README.md
+
+[33mcommit e823e27dcb8be2e43b4a2861cd88e82abb6bf824[m
+Merge: f1f9ae5 43b4294
+Author: BiloCode <73754175+BiloCode@users.noreply.github.com>
+Date:   Mon Jul 19 00:34:24 2021 -0500
+
+    fix(server):  fix casting in token decode
+
+[33mcommit 43b4294be1cef0f8679c4cd20dbc357a2e6d0150[m
+Author: BiloCode <billy_paredes_aycho@hotmail.com>
+Date:   Mon Jul 19 00:32:50 2021 -0500
+
+    fix(server): token decode casting fixed
+
+[33mcommit 3f4939031bb2542446f4c16a41951f7cdf037f2a[m
+Author: BiloCode <billy_paredes_aycho@hotmail.com>
+Date:   Mon Jul 19 00:02:00 2021 -0500
+
+    chore(server): package.json add types for supertest
+
+[33mcommit f1f9ae50fab676bec48a80c05e1bafc4b384a161[m
+Merge: 84487db 64ac787
+Author: BiloCode <73754175+BiloCode@users.noreply.github.com>
+Date:   Sun Jul 18 23:06:26 2021 -0500
+
+    refactor(server): token middleware update
+
+[33mcommit 64ac787a06cddc2c6a8a1250270279e3b114b5ee[m
+Author: BiloCode <billy_paredes_aycho@hotmail.com>
+Date:   Sun Jul 18 23:04:58 2021 -0500
+
+    refactor(server): token middleware update
+
+[33mcommit 5c49fcf12382e0731ca437a66520346ffa470e27[m
+Author: Imanol Mayo <mayoimanol@gmail.com>
+Date:   Sun Jul 18 16:51:22 2021 -0500
+
+    perf(server):modify token verification
+
+[33mcommit 0c5759e6a9e54d5c5ca9bcd427d0d4e66a043bdd[m
+Merge: 938db2c 84487db
+Author: Imanol Mayo <mayoimanol@gmail.com>
+Date:   Sun Jul 18 15:53:45 2021 -0500
+
+    Merge branch 'main' of https://github.com/BiloCode/School-Management-System into main
+
+[33mcommit 938db2c89cd1d8bb0bcae9861d5b57e712b32036[m
+Author: Imanol Mayo <mayoimanol@gmail.com>
+Date:   Sun Jul 18 15:49:45 2021 -0500
+
+    feat(server):add driver for authentication
+
+[33mcommit 84487dbc84d3a0d58b49aded563d145e5928e3cd[m
+Author: josedaesbar <67618319+josedaesbar@users.noreply.github.com>
+Date:   Fri Jul 16 22:07:09 2021 -0500
+
+    chore(server): mysql edit table student tutors and student
+    
+    Add attribute relationship in table StudentTutors and delete attribute tutorId in table Student
+
+[33mcommit 8cb37a0db03a756e687ce8edf5c83a989a29c7af[m
+Author: Imanol Mayo <mayoimanol@gmail.com>
+Date:   Fri Jul 16 15:50:59 2021 -0500
+
+    refactor(server):change token service valid format
+
+[33mcommit b1bcb645250df6a492e3d1f089053dfa09aa71c5[m
+Author: Jhony Vega <jhonyvegacuya24@gmail.com>
+Date:   Fri Jul 16 09:56:32 2021 -0500
+
+    Feature/classroom assistance (#8)
+    
+    * feat(server): add controller interface
+    
+    * feat(server): add an adapter to read class controllers
+    
+    * feat(server): add example using services and controllers together

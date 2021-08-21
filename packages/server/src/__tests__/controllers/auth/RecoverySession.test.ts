@@ -1,8 +1,9 @@
 // Supertest
+import { server } from '../../../server';
+
 import express from 'express';
 import request from 'supertest';
 import mysqlInitialize from '@config/mysql';
-import { server } from '../../../server';
 
 describe('Recovery Session Route', () => {
   const app = express();
@@ -12,7 +13,8 @@ describe('Recovery Session Route', () => {
   });
 
   test('Get user by token Correct Format and exist Token', async () => {
-    const user_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMDAwMDEiLCJ1c2VyX3R5cGUiOiJkaXJlY3RvciIsImlhdCI6MTYyODEzMTQzNSwiZXhwIjoxNjI5NDI3NDM1fQ.tMyTjS9jkRjZZcjz7iAUmFZDe6ZePH4K5c9Zx-Jgmpc';
+    const user_token =
+      'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMDAwMDEiLCJ1c2VyX3R5cGUiOiJkaXJlY3RvciIsImlhdCI6MTYyODEzMTQzNSwiZXhwIjoxNjI5NDI3NDM1fQ.tMyTjS9jkRjZZcjz7iAUmFZDe6ZePH4K5c9Zx-Jgmpc';
     const response = await request(app)
       .get('/auth/recovery-session')
       .set('Authorization', user_token)

@@ -1,10 +1,16 @@
 import express from 'express';
 import request from 'supertest';
+
 import firebaseConnection from '@config/firebase';
-import { AdapterController } from '@utils/AdapterController';
-import MarkStudentAttendanceController from '@controllers/assistance/MarkStudentAttendanceController';
-import { classroomIdMock, createdDateAssistanceMock, studentIdMock } from '@mocks/markStudentAttendance.mock';
+import { MarkStudentAttendance } from '@controllers/assistance/MarkStudentAttendance';
+
 import { server } from '../../../server';
+import { AdapterController } from '@utils/AdapterController';
+import {
+  classroomIdMock,
+  createdDateAssistanceMock,
+  studentIdMock,
+} from '@mocks/markStudentAttendance.mock';
 
 describe('MarkStudentAttendance controller', () => {
   const app = express();
@@ -15,10 +21,7 @@ describe('MarkStudentAttendance controller', () => {
   });
 
   test('should emit a error if the user does not send body', (done) => {
-    app.post(
-      '/assistance/mark',
-      AdapterController(MarkStudentAttendanceController),
-    );
+    app.post('/assistance/mark', AdapterController(MarkStudentAttendance));
     request(app)
       .post('/assistance/mark')
       .expect('Content-Type', /json/)
@@ -32,10 +35,7 @@ describe('MarkStudentAttendance controller', () => {
       studentId: studentIdMock,
       date: createdDateAssistanceMock,
     };
-    app.post(
-      '/assistance/mark',
-      AdapterController(MarkStudentAttendanceController),
-    );
+    app.post('/assistance/mark', AdapterController(MarkStudentAttendance));
     request(app)
       .post('/assistance/mark')
       .send(body)
@@ -50,10 +50,7 @@ describe('MarkStudentAttendance controller', () => {
       studentId: studentIdMock,
       date: createdDateAssistanceMock,
     };
-    app.post(
-      '/assistance/mark',
-      AdapterController(MarkStudentAttendanceController),
-    );
+
     request(app)
       .post('/assistance/mark')
       .send(body)
