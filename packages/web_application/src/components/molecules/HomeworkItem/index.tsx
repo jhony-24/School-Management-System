@@ -5,10 +5,8 @@ import Text from '../../atoms/Text';
 import { Fonts } from '../../../styles/font';
 import { TColor, TSize } from '../../../styles/text';
 import { HomeworkState } from '../../../styles/homework';
-import { Image } from 'react-native';
-
-const ChevronRight = require('../../../assets/icons/chevron-right.png');
-
+import { IconType } from '../../../styles/icons';
+import Icon from '../../atoms/Icon';
 
 type TProps = {
   course: string;
@@ -20,11 +18,15 @@ type TProps = {
 const HomeworkItem = ({ course, date, state, preview }: TProps) => {
   const textCourseColor =
     state === HomeworkState.lated ? TColor.RED : TColor.BLACK;
+  const iconState =
+    state === HomeworkState.lated
+      ? IconType.HOMEWORK_LATED
+      : IconType.HOMEWORK_OK;
 
   return (
     <S.Container>
       <View>
-        <Text>icon</Text>
+        <Icon icon={iconState} />
       </View>
       <S.DetailCourse>
         <Text weight={Fonts.BOLD} color={textCourseColor}>
@@ -32,11 +34,7 @@ const HomeworkItem = ({ course, date, state, preview }: TProps) => {
         </Text>
         <Text size={TSize.SMALL}>Se entregó el {date}</Text>
       </S.DetailCourse>
-      {preview && (
-        <View>
-          <Image source={ChevronRight} />
-        </View>
-      )}
+      {preview && <Icon icon={IconType.ARROW_RIGHT_BLACK} />}
     </S.Container>
   );
 };

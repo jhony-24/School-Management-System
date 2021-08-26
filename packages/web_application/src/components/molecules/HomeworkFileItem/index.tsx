@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import * as S from './styles';
 import Text from '../../atoms/Text';
 import { TColor, TSize } from '../../../styles/text';
-
+import { Image } from 'react-native';
 import Icon from '../../atoms/Icon';
 import { IconType } from '../../../styles/icons';
 
@@ -20,7 +20,7 @@ const HomeworkFileItem = ({ course, file, preview }: TProps) => {
   return (
     <S.Container>
       <View>
-        <Text>{/* <Icon /> */}</Text>
+        <Image source={resourceImages[fileImage]} resizeMode="contain" />
       </View>
       <S.DetailCourse>
         <Text>{course}</Text>
@@ -39,7 +39,7 @@ HomeworkFileItem.defaultProps = {
 
 const resourceImages = {
   pdf: require('../../../assets/icons/file-pdf.png'),
-  jpg: require('../../../assets/icons/file-pdf.png'),
+  jpg: require('../../../assets/icons/file-image.png'),
 };
 
 const fileImages: Record<string, string> = {

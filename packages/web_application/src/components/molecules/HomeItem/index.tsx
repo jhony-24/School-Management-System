@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as S from './styles';
 
-import { View } from 'react-native';
 import Text from '../../atoms/Text';
 import { TColor, TSize } from '../../../styles/text';
 import { Fonts } from '../../../styles/font';
