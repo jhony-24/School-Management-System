@@ -29,6 +29,9 @@
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ],
+    "indent": ["error", 2],
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/indent": ["error", 2],
     "import/extensions": "off",
     "max-len": "off",
     "import/prefer-default-export": "off",
@@ -43,7 +46,10 @@
     "class-methods-use-this": "off",
     "linebreak-style": "off",
     "no-useless-constructor": "off",
-    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    "no-unused-vars": [
+      "error",
+      { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
+    ],
     "global-require": 0
   },
   "settings": {

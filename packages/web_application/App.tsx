@@ -11,6 +11,9 @@ import AppError from './src/components/templates/AppError';
 import SourceLoading from './src/components/templates/SourceLoading';
 import ScreenLimitator from './src/components/atoms/ScreenLimitator';
 
+import store from './src/store';
+import { Provider } from 'react-redux';
+
 import { Fonts } from './src/styles/font';
 
 export default function App() {
@@ -29,9 +32,11 @@ export default function App() {
   })();
 
   return (
-    <View style={{ flex: 1 }}>
-      <StatusBar />
-      <ScreenLimitator>{screenInApp}</ScreenLimitator>
-    </View>
+    <Provider store={store}>
+      <View style={{ flex: 1 }}>
+        <StatusBar />
+        <ScreenLimitator>{screenInApp}</ScreenLimitator>
+      </View>
+    </Provider>
   );
 }
